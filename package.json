@@ -1,0 +1,11 @@
+{
+  "name": "testify-automation_school",
+  "version": "1.0.0",
+  "description": "This file contains a javascript code to find the largest of three numbers",
+  "main": "task3.js",
+  "scripts": {
+    "test": "node task3.js"
+  },
+  "author": "",
+  "license": "ISC"
+}
