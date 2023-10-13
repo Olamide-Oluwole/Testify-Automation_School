@@ -1,5 +1,4 @@
 // program to find the largest among three numbers
-const prompt = require ("prompt-sync")({sigint: true})
 // take input from the user
 const num1 = 5;
 const num2 = 9;
