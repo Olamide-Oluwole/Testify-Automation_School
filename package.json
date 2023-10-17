@@ -4,7 +4,8 @@
   "description": "This file contains a javascript code to find the largest of three numbers",
   "main": "task3.js",
   "scripts": {
-    "test": "node task3.js"
+    "test": "node task3.js",
+    "task3a": "node hello.js"
   },
   "author": "",
   "license": "ISC"
