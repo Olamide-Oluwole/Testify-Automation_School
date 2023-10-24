@@ -5,7 +5,7 @@
   "main": "task3.js",
   "scripts": {
     "test": "node task3.js",
-    "task3a": "node hello.js"
+    "task3a": "node task2.js"
   },
   "author": "",
   "license": "ISC"
