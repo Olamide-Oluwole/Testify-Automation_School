@@ -1,0 +1,520 @@
+Delivered-To: olamide.oluwole0908@gmail.com
+Received: by 2002:a98:81c2:0:b0:1e6:a9b:dec5 with SMTP id 2csp3448982eij;
+        Thu, 16 Nov 2023 11:13:03 -0800 (PST)
+X-Google-Smtp-Source: AGHT+IHR+LgSJ5MUBX8aFkwNJ+eA50ViSSKAcKbTYp6cjK2jmIOMz6cnMjVlUrfucNPYLqo1e6EP
+X-Received: by 2002:a25:3792:0:b0:da3:743d:ea3e with SMTP id e140-20020a253792000000b00da3743dea3emr16702429yba.21.1700161982995;
+        Thu, 16 Nov 2023 11:13:02 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1700161982; cv=none;
+        d=google.com; s=arc-20160816;
+        b=FYghrx6KlpGKQLcp03uEQVBcTTTVL+AZRttJMIlm37nF7GCumofs/hHFXpP65W7ys9
+         ut1UuD2w6LNg3Q0/ARUOHlyM5QaBnFzXCufKVroU8dukiIIfaBGSDOjklv1OBs2l0aNN
+         x8yHrgObjlbwHi36AY0WX8LMs4sLkuGFmpmy0yd6kyds7iYxm9likDSTj5Qr3WriBSQp
+         NGXv+8SvO5BtHhxVf/F525DGJ2/slazi54but4WigSjDYR1+bzO6zn+GtbrVaBtgV+0Z
+         3W+6PUSj4UyFjCUqWwzxQrY8ISdrP3jtdrj1W1yAuuc8HkQzuuw4yDgfpL2CnGIwxr6V
+         EAwQ==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=to:subject:message-id:mime-version:from:date
+         :content-transfer-encoding:dkim-signature:dkim-signature;
+        bh=sRtWsWCLF0cFMw30aT8nbZzsbzSj/b53klyCREwEiQk=;
+        fh=oBlrklZy9vBEgUhFV6TZ2HYo0Vzzs1l2Kj7Ef4bK/mg=;
+        b=QqbsHbfqKw/o52lNsmhVHw9yt2u+aB+QXQk9CYqFyPP1nfl3CXQuaaP6rSHIR/5ZTE
+         jO1DZx4slvpkvjHlXGa4SmskMh5HKppLRYjJ1Qf6JydoIdRCni3RPnIEDInM7oQrnKGc
+         prMgxb8DicnrxtKAKRjyE8djtIt9HaGJqGZvLzkqECjH8/YyPceTiSZkONQLg0rQnlQp
+         8Z0BRxaiLiK5z226wjcJZg3/Oi4jQf0JwWjoO3l5xiFgIpYAxlz7VR+XM1ewhNqh8/xX
+         xBgJa4xb0Gmoz3rhJGYGbUGV4hC0jng1kAVVh118hPqaXMcZAs6b0nWhqERhSSMznKRU
+         QiPA==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@getpostman.com header.s=s1 header.b=MnpMpDcH;
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b=QVnQCYUB;
+       spf=pass (google.com: domain of bounces+3399158-17cd-olamide.oluwole0908=gmail.com@mail.getpostman.com designates 167.89.76.141 as permitted sender) smtp.mailfrom="bounces+3399158-17cd-olamide.oluwole0908=gmail.com@mail.getpostman.com";
+       dmarc=pass (p=QUARANTINE sp=QUARANTINE dis=NONE) header.from=getpostman.com
+Return-Path: <bounces+3399158-17cd-olamide.oluwole0908=gmail.com@mail.getpostman.com>
+Received: from o1.mail.getpostman.com (o1.mail.getpostman.com. [167.89.76.141])
+        by mx.google.com with ESMTPS id w187-20020a25dfc4000000b00da0384c2e91si77223ybg.518.2023.11.16.11.13.02
+        for <olamide.oluwole0908@gmail.com>
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Thu, 16 Nov 2023 11:13:02 -0800 (PST)
+Received-SPF: pass (google.com: domain of bounces+3399158-17cd-olamide.oluwole0908=gmail.com@mail.getpostman.com designates 167.89.76.141 as permitted sender) client-ip=167.89.76.141;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@getpostman.com header.s=s1 header.b=MnpMpDcH;
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b=QVnQCYUB;
+       spf=pass (google.com: domain of bounces+3399158-17cd-olamide.oluwole0908=gmail.com@mail.getpostman.com designates 167.89.76.141 as permitted sender) smtp.mailfrom="bounces+3399158-17cd-olamide.oluwole0908=gmail.com@mail.getpostman.com";
+       dmarc=pass (p=QUARANTINE sp=QUARANTINE dis=NONE) header.from=getpostman.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=getpostman.com;
+	h=content-transfer-encoding:content-type:from:mime-version:subject:
+	x-feedback-id:to:cc:content-type:from:subject:to;
+	s=s1; bh=sRtWsWCLF0cFMw30aT8nbZzsbzSj/b53klyCREwEiQk=;
+	b=MnpMpDcHVB59sv6D7iJ9oeDy83g0BA/2wc4dliitHVXvxxXlM7Y3p50n1NiKmCzxiGrQ
+	iRaLxSFn2DVDmosbodRhoHAFL9ZHuziVVRBiG/nZyK0mV9f7dsyNYCY0cCuP4t44plXt+O
+	oi3NFZx6PvrGDB7Y+Akh08N86sRzRM59j9gOxsfkvVxKxd8qIe52guRhWQihvaSfVPjSk2
+	KpREKi8FvDf8AIwQKKMIdcuXGCwJgJFnihO/NRxxOfBTJsQ6KBH/dOpUCqoWVuhv+nNEqF
+	Ro0Y5kmHLrJQImtouxxjta/LMfoLWDYv9AW7GEcNKZmpq/9c3iXrNCd7hr70s06A==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=sendgrid.info;
+	h=content-transfer-encoding:content-type:from:mime-version:subject:
+	x-feedback-id:to:cc:content-type:from:subject:to;
+	s=smtpapi; bh=sRtWsWCLF0cFMw30aT8nbZzsbzSj/b53klyCREwEiQk=;
+	b=QVnQCYUBYLO1nd6qWJNGpBVG+Y75BAELgqGFqxZx1RLYfBmSO186HhqDQHO2Zh0K6Wsr
+	mPwu/IvCLVDeMuSBXrWRXuZcBnP+kAdAFDmlzk+woxP4PHcYm7p9vHRTsD6sh5wDoRNdJY
+	e5ZhiFKucaYCXbfAboBeg2WVoSQDzj9vU=
+Received: by filterdrecv-6d6bf4565d-kj5mq with SMTP id filterdrecv-6d6bf4565d-kj5mq-1-655669BE-1D
+        2023-11-16 19:13:02.271068897 +0000 UTC m=+2593888.951619390
+Received: from MzM5OTE1OA (unknown)
+	by geopod-ismtpd-35 (SG) with HTTP
+	id E_KQGQpmQW2oJYh4H2qTuA
+	Thu, 16 Nov 2023 19:13:02.233 +0000 (UTC)
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html; charset=iso-8859-1
+Date: Thu, 16 Nov 2023 19:13:02 +0000 (UTC)
+From: Postman Monitors <noreply@notifications.getpostman.com>
+Mime-Version: 1.0
+Message-ID: <E_KQGQpmQW2oJYh4H2qTuA@geopod-ismtpd-35>
+Subject: [Critical] Repeated monitoring errors - Book Collection
+X-Feedback-ID: 3399158:SG
+X-SG-EID: 
+ =?us-ascii?Q?Y6JVMOOYLk+MfI=2F6KNTYORO6oggEZMLysnOaxtJtBADSYKv26NuNOdQnQ=2F+wq5?=
+ =?us-ascii?Q?AxVfmgi6mfo68tN2NWXgF0b1aIUOIkNOj+HjZKl?=
+ =?us-ascii?Q?kW0QSxAWWtEBOJvUBXtO3Q3fDNRLgeU435ZqGoe?=
+ =?us-ascii?Q?u2xDxkzFd4do=2FLigFP=2F7EBGw4=2F1FupWixpwyRAG?=
+ =?us-ascii?Q?idqV5MuBVn6cMA=2F+jUOiV2rZh+ZB4umSiVomGqL?=
+ =?us-ascii?Q?quxPXSNGoW5=2FViJcvUMO3+xWka0pPE0F2yD5CNj?=
+ =?us-ascii?Q?uOmEYBH3MMJKzZLokHRc44Qnd3oSlBorZ4zo38u?= =?us-ascii?Q?eLg=3D?=
+X-SG-ID: 
+ =?us-ascii?Q?N2C25iY2uzGMFz6rgvQsb6p+EnTODpuAG9CNo2HSXt7zCFAMjEWY0bkdEwqxni?=
+ =?us-ascii?Q?uV5u5rImanbq3+nhQLpvJOUp7qU3XhbGqEAyT6s?=
+ =?us-ascii?Q?C+9CuYDUgclTwkd0Jy6g7YVunuDv9CGibqTPu3d?=
+ =?us-ascii?Q?iz+MGHylas1ZA4N+K1wvp=2FC9VcAmiyQ=3D?=
+To: olamide.oluwole0908@gmail.com
+X-Entity-ID: b3D1VYUeVOzS9sCOTdmLMw==
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.=
+w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html lang=3D"en" xmlns=3D"ht=
+tp://www.w3.org/1999/xhtml"><head><meta content=3D"text/html; charset=3DUTF=
+-8" http-equiv=3D"Content-Type"><title>Errors in the monitor - Book Collect=
+ion</title><meta content=3D"width=3Ddevice-width,initial-scale=3D1" name=3D=
+"viewport"><meta name=3D"x-apple-disable-message-reformatting"><style type=
+=3D"text/css">a[x-apple-data-detectors]{color:inherit!important;text-decora=
+tion:none!important;font-size:inherit!important;font-family:inherit!importa=
+nt;font-weight:inherit!important;line-height:inherit!important}</style><!--=
+[if !mso]><!--><link href=3D"https://fonts.googleapis.com/css?family=3DInte=
+r" rel=3D"stylesheet" type=3D"text/css"><link href=3D"https://fonts.googlea=
+pis.com/css?family=3DIBM+Plex+Mono" rel=3D"stylesheet" type=3D"text/css"><s=
+tyle type=3D"text/css">@import url(https://fonts.googleapis.com/css?family=
+=3DInter);@import url(https://fonts.googleapis.com/css?family=3DIBM+Plex+Mo=
+no);</style><!--<![endif]--><!--[if mso]><xml><o:OfficeDocumentSettings><o:=
+AllowPNG/><o:PixelsPerInch>96</o:PixelsPerInch></o:OfficeDocumentSettings><=
+/xml><style type=3D"text/css">.ct{word-break: break-all !important;}</style=
+><![endif]--><style type=3D"text/css">p,td{font-family:Inter,system-ui,-app=
+le-system,Segoe UI,Roboto,Ubuntu,Arial,sans-serif}.L{color:#0265d2;text-dec=
+oration:none!important}body{margin:0;padding:0;-webkit-text-size-adjust:100=
+%;-ms-text-size-adjust:100%;-webkit-font-smoothing:antialiased}table,td{bor=
+der-collapse:collapse;mso-table-lspace:0;mso-table-rspace:0}</style></head>=
+<body style=3D"-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;-web=
+kit-font-smoothing:antialiased;margin:0;padding:0"><center><div style=3D"ma=
+x-width:600px;margin:0"><table align=3D"center" border=3D"0" cellpadding=3D=
+"0" cellspacing=3D"0" style=3D"mso-table-lspace:0;mso-table-rspace:0;width:=
+600px;min-width:600px;max-width:600px;border-collapse:collapse;border:1px s=
+olid #e2e2e2" width=3D"600" bgcolor=3D"white"><tr><td style=3D"font-family:=
+Inter,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Arial,sans-serif;borde=
+r-collapse:collapse;mso-table-lspace:0;mso-table-rspace:0;line-height:0;fon=
+t-size:0;mso-line-height-rule:exactly"><table align=3D"center" border=3D"0"=
+ cellpadding=3D"0" cellspacing=3D"0" role=3D"presentation" width=3D"598" bg=
+color=3D"white" style=3D"border-collapse:collapse;mso-table-lspace:0;mso-ta=
+ble-rspace:0"><tr><div style=3D"display:none;font-size:1px;color:#fff;line-=
+height:1px;max-height:0;max-width:0;width:0;height:0;opacity:0;overflow:hid=
+den">Check now to prevent further errors.</div></tr><tr><td style=3D"font-f=
+amily:Inter,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Arial,sans-serif=
+;border-collapse:collapse;mso-table-lspace:0;mso-table-rspace:0;padding:48p=
+x 48px 0 48px"><table align=3D"center" border=3D"0" cellpadding=3D"0" cells=
+pacing=3D"0" role=3D"presentation" width=3D"100%" bgcolor=3D"white" style=
+=3D"border-collapse:collapse;mso-table-lspace:0;mso-table-rspace:0"><tr><td=
+ align=3D"left" style=3D"font-family:Inter,system-ui,-apple-system,Segoe UI=
+,Roboto,Ubuntu,Arial,sans-serif;border-collapse:collapse;mso-table-lspace:0=
+;mso-table-rspace:0;font-size:0;word-break:break-word"><a href=3D"https://l=
+inks.getpostman.com/ls/click?upn=3D3y7nOEZSJOF1v-2Fv7UyshsBBWcIbUzaP9ERuZKx=
+xoXlQ-2Bu7FJVtkyTZRqVPEZvdDIyYqs_czLB30PNL3zOJAWkpeoYIKdu0z2s624wcKzDicFotX=
+QgYfhAU7af76zMIbQGlpvGTTL0Su2zg-2Fj20x8cF0BO6-2FE3LcJbp65jAPAu3VgcSReDXELqy=
+zYxLLA4clJ7ZnYo-2FfxIDZQHpSV82LY2NlChUyV3uLi94RWDefVrCbw9wrTG7HbthQZWaNHpXk=
+y8KdK9y0rQb20gPG7ncxQMGdGsfDyBOM3q9C794LTf3GHo8cpcAhi4-2F5jhu8KcuhI0n-2BJer=
+N0dFcHJQd2VFQVeXM6FwipGchBfw8xY3nHPKfoelaU87vLZPv34rzoMMDc1VfIX9gFsUTfU-2FW=
+rAKI4fwtZFS6EN1JCDzK3tWwSdiAm-2BG4nPnwgihiqYLgHopsVYiw8n" target=3D"_blank"=
+><img width=3D"142" src=3D"https://skills-assets.pstmn.io/email-assets/moni=
+toring/postman-logo.png" style=3D"border:0;display:block;outline:0;text-dec=
+oration:none;height:auto"></a></td></tr><tr><td style=3D"font-family:Inter,=
+system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Arial,sans-serif;border-coll=
+apse:collapse;mso-table-lspace:0;mso-table-rspace:0;padding-top:32px"><div =
+style=3D"word-break:break-word;font-family:Inter,Segoe UI,Roboto,Arial,verd=
+ana,geneva,sans-serif;font-size:20px;font-style:normal;font-weight:600;line=
+-height:24px;text-align:left;letter-spacing:-.56px">Houston, we have multip=
+le warnings</div><div class=3D"ct" style=3D"word-break:break-word;word-wrap=
+:break-word;overflow:hidden;padding-top:8px!important;font-family:Inter,Seg=
+oe UI,Roboto,Arial,verdana,geneva,sans-serif;font-size:14px;font-style:norm=
+al;line-height:22px;text-align:left">One or more requests in the API Collec=
+tion collection could not be tested repeatedly during the monitor runs. For=
+ more information, go to monitor run and review the console log.</div></td>=
+</tr><tr><td align=3D"center" style=3D"font-family:Inter,system-ui,-apple-s=
+ystem,Segoe UI,Roboto,Ubuntu,Arial,sans-serif;border-collapse:collapse;mso-=
+table-lspace:0;mso-table-rspace:0;direction:ltr;font-size:0;padding-top:32p=
+x"><table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0"=
+ role=3D"presentation" width=3D"498" style=3D"border-collapse:collapse;mso-=
+table-lspace:0;mso-table-rspace:0;width:498px"><tbody><tr><td style=3D"font=
+-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Arial,sans-ser=
+if;border-collapse:collapse;mso-table-lspace:0;mso-table-rspace:0;border-to=
+p:1px solid #ededed;direction:ltr;font-size:0;text-align:center;width:498px=
+" width=3D"498" align=3D"center"><div style=3D"font-size:0;text-align:left;=
+direction:ltr;display:inline-block;vertical-align:middle;width:498px!import=
+ant" width=3D"498"><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" =
+role=3D"presentation" width=3D"498" style=3D"border-collapse:collapse;mso-t=
+able-lspace:0;mso-table-rspace:0;width:498px"><tbody><tr><td align=3D"left"=
+ style=3D"font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,=
+Arial,sans-serif;border-collapse:collapse;mso-table-lspace:0;mso-table-rspa=
+ce:0;font-size:0;padding:6px 8px;word-break:break-word;vertical-align:middl=
+e;width:249px" valign=3D"middle" width=3D"249"><div style=3D"font-family:In=
+ter,Segoe UI,Roboto,Arial,verdana,geneva,sans-serif;font-size:12px;font-sty=
+le:normal;font-weight:600;line-height:16px;text-align:left;color:#6b6b6b">M=
+onitor</div></td><td align=3D"left" style=3D"font-family:Inter,system-ui,-a=
+pple-system,Segoe UI,Roboto,Ubuntu,Arial,sans-serif;border-collapse:collaps=
+e;mso-table-lspace:0;mso-table-rspace:0;font-size:0;padding:6px 8px;word-br=
+eak:break-word;vertical-align:middle;width:249px" valign=3D"middle" width=
+=3D"249"><div style=3D"word-break:break-all;word-wrap:break-word;overflow:h=
+idden;font-family:Inter,Segoe UI,Roboto,Arial,verdana,geneva,sans-serif;fon=
+t-size:12px;font-style:normal;font-weight:400;line-height:16px;text-align:l=
+eft;color:#000"><a class=3D"L" href=3D"https://links.getpostman.com/ls/clic=
+k?upn=3D3y7nOEZSJOF1v-2Fv7UyshsN-2BfPpuY-2F-2BBsOKhUoAoV4SqUUIS9FTTU74ZhHEG=
+eT8EuJgHNZGXSA8cSIY61Jf4eJqz6Eel2jfq38wTOAk-2BZcADeZEbWG128bpvqzEwPkdz7sqmh=
+fNY5pNKlgw7b5xX8ZkAFijoQJ6IpYXTPvlow-2F48j2egqFPYpLjQrDok657oJdh7-2BOh0QzI-=
+2FOud6haV2WJA-3D-3DYyTm_czLB30PNL3zOJAWkpeoYIKdu0z2s624wcKzDicFotXQgYfhAU7a=
+f76zMIbQGlpvGTTL0Su2zg-2Fj20x8cF0BO6-2FE3LcJbp65jAPAu3VgcSReDXELqyzYxLLA4cl=
+J7ZnYo-2FfxIDZQHpSV82LY2NlChUyV3uLi94RWDefVrCbw9wrTPb5Fi3k1NYkJ1euh4SvORutK=
+6lHwvUf-2BDtyGEoSLa2Nsvxr2jpVynvRwiB18sSa-2FTcOH42QgE7XwxXHVymrKKJDI7Q0DrMb=
+Yi-2FMLcchARFzRa7ycPhSLd5wvJW0IU-2BK7-2FrAoScQGnvKAEEM5eJUOHkkEC8eC8zC18CsV=
+hrxpkl3X6UdBxMoazpoNjN19cjx-2BnF0-2BE7zMJv83m-2BSDFMe3v" style=3D"color:#02=
+65d2;text-decoration:none">Book Collection</a></div></td></tr></tbody></tab=
+le></div></td></tr><tr><td style=3D"font-family:Inter,system-ui,-apple-syst=
+em,Segoe UI,Roboto,Ubuntu,Arial,sans-serif;border-collapse:collapse;mso-tab=
+le-lspace:0;mso-table-rspace:0;border-top:1px solid #ededed;direction:ltr;f=
+ont-size:0;padding:0;text-align:center;width:498px" width=3D"498" align=3D"=
+center"><div style=3D"font-size:0;text-align:left;direction:ltr;display:inl=
+ine-block;vertical-align:middle;width:498px!important" width=3D"498"><table=
+ border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentation" wid=
+th=3D"498" style=3D"border-collapse:collapse;mso-table-lspace:0;mso-table-r=
+space:0;width:498px"><tbody><tr><td align=3D"left" style=3D"font-family:Int=
+er,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Arial,sans-serif;border-c=
+ollapse:collapse;mso-table-lspace:0;mso-table-rspace:0;font-size:0;padding:=
+6px 8px;word-break:break-word;vertical-align:middle;width:249px" valign=3D"=
+middle" width=3D"249"><div style=3D"font-family:Inter,Segoe UI,Roboto,Arial=
+,verdana,geneva,sans-serif;font-size:12px;font-style:normal;font-weight:600=
+;line-height:16px;text-align:left;color:#6b6b6b">Collection</div></td><td a=
+lign=3D"left" style=3D"font-family:Inter,system-ui,-apple-system,Segoe UI,R=
+oboto,Ubuntu,Arial,sans-serif;border-collapse:collapse;mso-table-lspace:0;m=
+so-table-rspace:0;font-size:0;padding:6px 8px;word-break:break-word;vertica=
+l-align:middle;width:249px" valign=3D"middle" width=3D"249"><div style=3D"w=
+ord-break:break-all;word-wrap:break-word;overflow:hidden;font-family:Inter,=
+Segoe UI,Roboto,Arial,verdana,geneva,sans-serif;font-size:12px;font-style:n=
+ormal;font-weight:400;line-height:16px;text-align:left;color:#000"><a href=
+=3D"https://links.getpostman.com/ls/click?upn=3D3y7nOEZSJOF1v-2Fv7UyshsITTE=
+-2Fdo4jRkzgw9222KB87QMKElcWaSaC5MmgZ9Z93n29ljriQYYwvNZZQTs5HEBtsCYJrZIIyEQ2=
+uoViI99Ts0RJfH-2FQcFbe7uT9egkFK-2BYgbJ_czLB30PNL3zOJAWkpeoYIKdu0z2s624wcKzD=
+icFotXQgYfhAU7af76zMIbQGlpvGTTL0Su2zg-2Fj20x8cF0BO6-2FE3LcJbp65jAPAu3VgcSRe=
+DXELqyzYxLLA4clJ7ZnYo-2FfxIDZQHpSV82LY2NlChUyV3uLi94RWDefVrCbw9wrTX9YX-2Fcj=
+9Tk9zH3I5LjRF41Xx-2FI5sw9yYFq6ZPsLSk9uCYoCF78TpbUo4xSrFqqUZgdn6vxlK1RXZvwCN=
+HVSFulSZpKbDtzUUzLFFP-2Bfdbqdu9OBdXTMt5HzsxRMH-2Bb9vlocAp-2BoI0M7gw7Zf7E-2F=
+-2BvrPbKzUi8vFO6t7EUqy4mbqmWgjVlxr4bZiM3wA297-2Fn40PWwCZltPXUSQ-2FRZ70JE" c=
+lass=3D"L" style=3D"color:#0265d2;text-decoration:none">API Collection</a><=
+/div></td></tr></tbody></table></div></td></tr><tr><td style=3D"font-family=
+:Inter,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Arial,sans-serif;bord=
+er-collapse:collapse;mso-table-lspace:0;mso-table-rspace:0;border-top:1px s=
+olid #ededed;direction:ltr;font-size:0;padding:0;text-align:center;width:49=
+8px" width=3D"498" align=3D"center"><div style=3D"font-size:0;text-align:le=
+ft;direction:ltr;display:inline-block;vertical-align:middle;width:498px!imp=
+ortant" width=3D"498"><table border=3D"0" cellpadding=3D"0" cellspacing=3D"=
+0" role=3D"presentation" width=3D"498" style=3D"border-collapse:collapse;ms=
+o-table-lspace:0;mso-table-rspace:0;width:498px"><tbody><tr><td align=3D"le=
+ft" style=3D"font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Ubun=
+tu,Arial,sans-serif;border-collapse:collapse;mso-table-lspace:0;mso-table-r=
+space:0;font-size:0;padding:6px 8px;word-break:break-word;vertical-align:mi=
+ddle;width:249px" valign=3D"middle" width=3D"249"><div style=3D"font-family=
+:Inter,Segoe UI,Roboto,Arial,verdana,geneva,sans-serif;font-size:12px;font-=
+style:normal;font-weight:600;line-height:16px;text-align:left;color:#6b6b6b=
+">Environment</div></td><td align=3D"left" style=3D"font-family:Inter,syste=
+m-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Arial,sans-serif;border-collapse:=
+collapse;mso-table-lspace:0;mso-table-rspace:0;font-size:0;padding:6px 8px;=
+word-break:break-word;vertical-align:middle;width:249px" valign=3D"middle" =
+width=3D"249"><div style=3D"word-break:break-all;word-wrap:break-word;overf=
+low:hidden;font-family:Inter,Segoe UI,Roboto,Arial,verdana,geneva,sans-seri=
+f;font-size:12px;font-style:normal;font-weight:400;line-height:16px;text-al=
+ign:left;color:#000"><a href=3D"https://links.getpostman.com/ls/click?upn=
+=3D3y7nOEZSJOF1v-2Fv7UyshsPMCISeTXxBtSXYeFOfMdc7i0DLPW7S7-2FVq84MOnwxDb2-2F=
+5j-2BEdIiJnyAD3pBqJfuRlY1Vmlda0yrkuaTmRokkGkzzHmMLH1qSpPovXmcOovb_8o_czLB30=
+PNL3zOJAWkpeoYIKdu0z2s624wcKzDicFotXQgYfhAU7af76zMIbQGlpvGTTL0Su2zg-2Fj20x8=
+cF0BO6-2FE3LcJbp65jAPAu3VgcSReDXELqyzYxLLA4clJ7ZnYo-2FfxIDZQHpSV82LY2NlChUy=
+V3uLi94RWDefVrCbw9wrRoqGXx8VId1YVvr-2FaayfQ7AlT-2BJFmDywPtHSzVbE-2BPXi3mjRt=
+ZsyQhQHCfBV0exxpmYzv7SlskUOU0fH25EHg1l3-2Firpb2hHRybzQH3mVjHM5DYqmw67tV0qHO=
+hph-2BA7GxUEYHbYZoVfvK0kV1aQvfrxnFfDWfneI9uKAtvhfZVNv5EP-2FF91NWI5ZKYsjHDP6=
+m82N-2F5DvNPAsfo9KxthP6" class=3D"L" style=3D"color:#0265d2;text-decoration=
+:none">TestEnvironment</a></div></td></tr></tbody></table></div></td></tr><=
+tr><td style=3D"font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,U=
+buntu,Arial,sans-serif;border-collapse:collapse;mso-table-lspace:0;mso-tabl=
+e-rspace:0;border-top:1px solid #ededed;direction:ltr;font-size:0;padding:0=
+;text-align:center;width:498px" width=3D"498" align=3D"center"><div style=
+=3D"font-size:0;text-align:left;direction:ltr;display:inline-block;vertical=
+-align:middle;width:498px!important" width=3D"498"><table border=3D"0" cell=
+padding=3D"0" cellspacing=3D"0" role=3D"presentation" width=3D"498" style=
+=3D"border-collapse:collapse;mso-table-lspace:0;mso-table-rspace:0;width:49=
+8px"><tbody><tr><td align=3D"left" style=3D"font-family:Inter,system-ui,-ap=
+ple-system,Segoe UI,Roboto,Ubuntu,Arial,sans-serif;border-collapse:collapse=
+;mso-table-lspace:0;mso-table-rspace:0;font-size:0;padding:6px 8px;word-bre=
+ak:break-word;vertical-align:middle;width:249px" valign=3D"middle" width=3D=
+"249"><div style=3D"font-family:Inter,Segoe UI,Roboto,Arial,verdana,geneva,=
+sans-serif;font-size:12px;font-style:normal;font-weight:600;line-height:16p=
+x;text-align:left;color:#6b6b6b">Workspace</div></td><td align=3D"left" sty=
+le=3D"font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Aria=
+l,sans-serif;border-collapse:collapse;mso-table-lspace:0;mso-table-rspace:0=
+;font-size:0;padding:6px 8px;word-break:break-word;vertical-align:middle;wi=
+dth:249px" valign=3D"middle" width=3D"249"><div style=3D"word-break:break-a=
+ll;word-wrap:break-word;overflow:hidden;font-family:Inter,Segoe UI,Roboto,A=
+rial,verdana,geneva,sans-serif;font-size:12px;font-style:normal;font-weight=
+:400;line-height:16px;text-align:left;color:#000"><a href=3D"https://links.=
+getpostman.com/ls/click?upn=3D3y7nOEZSJOF1v-2Fv7UyshsFwjG-2B4WlOUfNd7JXVgH4=
+-2B-2BPmx5UeumG-2B-2FL6cBG2nU8BOOnRVZ09HYZdNrDxQ-2FQPbkkwdYTZ0PS5v3RxzACNcI=
+I-3D1AxM_czLB30PNL3zOJAWkpeoYIKdu0z2s624wcKzDicFotXQgYfhAU7af76zMIbQGlpvGTT=
+L0Su2zg-2Fj20x8cF0BO6-2FE3LcJbp65jAPAu3VgcSReDXELqyzYxLLA4clJ7ZnYo-2FfxIDZQ=
+HpSV82LY2NlChUyV3uLi94RWDefVrCbw9wrQSEwlPmzOKSOKzhcKP5EKNxLdxqbw7nK8IDpSqil=
+M3mWrFTF3vjpFplF-2F-2ByX-2Bjv6tOTvlhJZ37U4xN86Fh87R7NkJSckqvu-2FPPqbwhc8iEe=
+H-2FAlYMdUdDLPX-2FFkO6aKpEP1VKW2Uhjm9BQY7RZZRnmMF9ANMD-2Bb6PluOeX5-2BtQThs5=
+NYNxPvqbiFP7Trl-2Fitw1JC86kGFp1-2FlgvNIqGvdu" class=3D"L" style=3D"color:#0=
+265d2;text-decoration:none">Workshop</a></div></td></tr></tbody></table></d=
+iv></td></tr><tr><td style=3D"font-family:Inter,system-ui,-apple-system,Seg=
+oe UI,Roboto,Ubuntu,Arial,sans-serif;border-collapse:collapse;mso-table-lsp=
+ace:0;mso-table-rspace:0;border-top:1px solid #ededed;border-bottom:1px sol=
+id #ededed;direction:ltr;font-size:0;padding:0;text-align:center;width:498p=
+x" width=3D"498" align=3D"center"><div style=3D"font-size:0;text-align:left=
+;direction:ltr;display:inline-block;vertical-align:middle;width:498px!impor=
+tant" width=3D"498"><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0"=
+ role=3D"presentation" width=3D"498" style=3D"border-collapse:collapse;mso-=
+table-lspace:0;mso-table-rspace:0;width:498px"><tbody><tr><td align=3D"left=
+" style=3D"font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu=
+,Arial,sans-serif;border-collapse:collapse;mso-table-lspace:0;mso-table-rsp=
+ace:0;font-size:0;padding:6px 8px;word-break:break-word;vertical-align:midd=
+le;width:249px" valign=3D"middle" width=3D"249"><div style=3D"font-family:I=
+nter,Segoe UI,Roboto,Arial,verdana,geneva,sans-serif;font-size:12px;font-st=
+yle:normal;font-weight:600;line-height:16px;text-align:left;color:#6b6b6b">=
+Error recorded at</div></td><td align=3D"left" style=3D"font-family:Inter,s=
+ystem-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Arial,sans-serif;border-colla=
+pse:collapse;mso-table-lspace:0;mso-table-rspace:0;font-size:0;padding:6px =
+8px;word-break:break-word;vertical-align:middle;width:249px" valign=3D"midd=
+le" width=3D"249"><div style=3D"font-family:Inter,Segoe UI,Roboto,Arial,ver=
+dana,geneva,sans-serif;font-size:12px;font-style:normal;font-weight:400;lin=
+e-height:16px;text-align:left;color:#000">7:&zwnj;13 PM UTC 16 Nov 2023</di=
+v></td></tr></tbody></table></div></td></tr></tbody></table></td></tr><tr><=
+td style=3D"font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Ubunt=
+u,Arial,sans-serif;border-collapse:collapse;mso-table-lspace:0;mso-table-rs=
+pace:0;direction:ltr;font-size:0;padding:0;text-align:center" align=3D"cent=
+er"><!--[if mso | IE]><table role=3D"presentation" border=3D"0" cellpadding=
+=3D"0" cellspacing=3D"0"><tr><td style=3D"vertical-align:middle;width:502px=
+;"><![endif]--><div class=3D"mj-column-per-100 mj-outlook-group-fix" style=
+=3D"font-size:0;text-align:left;direction:ltr;display:inline-block;vertical=
+-align:middle;width:100%"><table border=3D"0" cellpadding=3D"0" cellspacing=
+=3D"0" role=3D"presentation" width=3D"100%" style=3D"border-collapse:collap=
+se;mso-table-lspace:0;mso-table-rspace:0"><tbody><tr><td style=3D"font-fami=
+ly:Inter,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Arial,sans-serif;bo=
+rder-collapse:collapse;mso-table-lspace:0;mso-table-rspace:0;vertical-align=
+:middle;padding:0" valign=3D"middle"><table border=3D"0" cellpadding=3D"0" =
+cellspacing=3D"0" role=3D"presentation" width=3D"100%" style=3D"border-coll=
+apse:collapse;mso-table-lspace:0;mso-table-rspace:0"><tbody><tr><td align=
+=3D"left" style=3D"font-family:Inter,system-ui,-apple-system,Segoe UI,Robot=
+o,Ubuntu,Arial,sans-serif;border-collapse:collapse;mso-table-lspace:0;mso-t=
+able-rspace:0;font-size:0;padding:24px 0 13px 0;word-break:break-word" vert=
+ical-align=3D"middle"><table border=3D"0" cellpadding=3D"0" cellspacing=3D"=
+0" role=3D"presentation" style=3D"mso-table-lspace:0;mso-table-rspace:0;bor=
+der-collapse:separate;line-height:100%"><tr><td align=3D"center" bgcolor=3D=
+"#FF6C37" role=3D"presentation" style=3D"font-family:Inter,system-ui,-apple=
+-system,Segoe UI,Roboto,Ubuntu,Arial,sans-serif;border-collapse:collapse;ms=
+o-table-lspace:0;mso-table-rspace:0;border:none;border-radius:3px;cursor:au=
+to;font-style:normal;mso-padding-alt:6px 16px 6px 16px;background:#ff6c37" =
+valign=3D"middle"><a href=3D"https://links.getpostman.com/ls/click?upn=3D3y=
+7nOEZSJOF1v-2Fv7UyshsN-2BfPpuY-2F-2BBsOKhUoAoV4SqUUIS9FTTU74ZhHEGeT8EuJgHNZ=
+GXSA8cSIY61Jf4eJg80mWV16-2BZvk5n8CFauDvHWgHvYMo-2F-2B-2FpPYt020yIlXbtGz3Abf=
+YDxlwMFFOyCVpyj8lx1BPOfQjweuU438AzrlAuxUPxv-2FN8ARnhTbuwCrIiD4vjMNL3sW4FUn3=
+WRzprkJS-2FU6tZPqtalNo3MLW4LQsxw6aUQiyQM5xR1T-2BeftCKFvR0-2BK91Hw81p0efxilQ=
+-3D-3D95Xm_czLB30PNL3zOJAWkpeoYIKdu0z2s624wcKzDicFotXQgYfhAU7af76zMIbQGlpvG=
+TTL0Su2zg-2Fj20x8cF0BO6-2FE3LcJbp65jAPAu3VgcSReDXELqyzYxLLA4clJ7ZnYo-2FfxID=
+ZQHpSV82LY2NlChUyV3uLi94RWDefVrCbw9wrSfrYokYjaEZSCbi-2F9a9FgRVrVY-2FUL0J4e2=
+v5EIucfLDbbzv9TG6dGcQDUYmggIE8JI3dJH8P09sJefYaKxtGBP3-2FJsVJWOxzqjn2dgiiyur=
+Ff-2FvATgpv9J4997tn79RnqVeqy77-2FHyGashptdQcy25cVe0S7Z6WNEtsH1H4ztudkFq2WQP=
+4DhXPNISeys4p0r5M7EpZpNTis2gOkd4pngM" style=3D"display:inline-block;backgro=
+und:#ff6c37;color:#fff;font-family:Inter,Segoe UI,Roboto,Arial,verdana,gene=
+va,sans-serif;font-size:12px;font-style:normal;font-weight:600;line-height:=
+20px;margin:0;text-decoration:none;text-transform:none;padding:6px 16px 6px=
+ 16px;mso-padding-alt:0;border-radius:3px" target=3D"_blank">View Run Resul=
+ts</a></td></tr></table></td></tr></tbody></table></td></tr></tbody></table=
+></div><!--[if mso | IE]></td></tr></table><![endif]--></td></tr></table></=
+td></tr></table></td></tr><tr align=3D"center" valign=3D"middle"><td width=
+=3D"598" align=3D"center" valign=3D"middle" style=3D"font-family:Inter,syst=
+em-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Arial,sans-serif;border-collapse=
+:collapse;mso-table-lspace:0;mso-table-rspace:0;line-height:0;font-size:0;m=
+so-line-height-rule:exactly;max-width:598px;width:598px"><table align=3D"ce=
+nter" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentation=
+" style=3D"mso-table-lspace:0;mso-table-rspace:0;max-width:598px;width:598p=
+x;border-collapse:collapse" width=3D"598"><tr><td style=3D"font-family:Inte=
+r,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Arial,sans-serif;border-co=
+llapse:collapse;mso-table-lspace:0;mso-table-rspace:0;line-height:0;font-si=
+ze:0;mso-line-height-rule:exactly"><table align=3D"center" border=3D"0" cel=
+lpadding=3D"0" cellspacing=3D"0" role=3D"presentation" width=3D"598" bgcolo=
+r=3D"white" style=3D"border-collapse:collapse;mso-table-lspace:0;mso-table-=
+rspace:0"><tr><td style=3D"font-family:Inter,system-ui,-apple-system,Segoe =
+UI,Roboto,Ubuntu,Arial,sans-serif;border-collapse:collapse;mso-table-lspace=
+:0;mso-table-rspace:0;padding:0 48px 48px 48px"><table align=3D"center" bor=
+der=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentation" width=
+=3D"100%" bgcolor=3D"white" style=3D"border-collapse:collapse;mso-table-lsp=
+ace:0;mso-table-rspace:0"><tbody><tr align=3D"left" valign=3D"middle"><td s=
+tyle=3D"font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Ar=
+ial,sans-serif;border-collapse:collapse;mso-table-lspace:0;mso-table-rspace=
+:0;width:498px;padding-top:11px;direction:ltr;text-align:left;max-width:498=
+px" width=3D"498" align=3D"left"><div style=3D"font-family:Inter,Segoe UI,R=
+oboto,Arial,verdana,geneva,sans-serif;font-size:16px;font-style:normal;font=
+-weight:600;line-height:20px;letter-spacing:-.12px;text-align:left">Last ru=
+n summary</div></td></tr><tr><td align=3D"left" style=3D"font-family:Inter,=
+system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Arial,sans-serif;border-coll=
+apse:collapse;mso-table-lspace:0;mso-table-rspace:0;direction:ltr;font-size=
+:0;padding-top:16px;padding-bottom:16px"><div style=3D"color:#6b6b6b;font-f=
+amily:Inter,Segoe UI,Roboto,Arial,verdana,geneva,sans-serif;font-size:14px;=
+font-style:normal;font-weight:400;line-height:22px;text-align:left">There w=
+ere <span style=3D"font-weight:600">3 errors</span> across <span style=3D"f=
+ont-weight:600">1 region</span>.</div></td></tr><tr><td align=3D"center" bg=
+color=3D"#ffffff" style=3D"font-family:Inter,system-ui,-apple-system,Segoe =
+UI,Roboto,Ubuntu,Arial,sans-serif;border-collapse:collapse;mso-table-lspace=
+:0;mso-table-rspace:0;direction:ltr;font-size:0;padding:7px"><table align=
+=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presen=
+tation" width=3D"484" style=3D"border-collapse:collapse;mso-table-lspace:0;=
+mso-table-rspace:0;border-top:1px solid #e6e6e6;width:484px"><tbody><tr ali=
+gn=3D"left" valign=3D"middle" style=3D"font-size:0"><td align=3D"center" st=
+yle=3D"border-collapse:collapse;mso-table-lspace:0;mso-table-rspace:0;color=
+:#444;text-align:center;padding:2px;font-family:'IBM Plex Mono',Inter,Segoe=
+ UI,Roboto,Arial,verdana,geneva,sans-serif;font-size:10px;line-height:16px;=
+direction:ltr;min-width:16px;max-width:45px" width=3D"2%" bgcolor=3D"#fffff=
+f">1</td><td align=3D"center" style=3D"border-collapse:collapse;mso-table-l=
+space:0;mso-table-rspace:0;color:#212121;text-align:center;padding:2px;font=
+-family:'IBM Plex Mono',Inter,Segoe UI,Roboto,Arial,verdana,geneva,sans-ser=
+if;font-size:10px;line-height:16px;width:65px;direction:ltr;max-width:65px"=
+ width=3D"65" bgcolor=3D"#f9f9f9">19:&zwnj;13:&zwnj;01</td><td align=3D"lef=
+t" style=3D"border-collapse:collapse;mso-table-lspace:0;mso-table-rspace:0;=
+color:#212121;padding:2px 2px 2px 4px;font-family:'IBM Plex Mono',Inter,Seg=
+oe UI,Roboto,Arial,verdana,geneva,sans-serif;word-break:break-all;word-wrap=
+:break-word;overflow:hidden;font-size:10px;line-height:16px;text-align:left=
+;direction:ltr;width:378px;max-width:378px" width=3D"378">Register an API C=
+lient</td></tr></tbody></table><table align=3D"center" border=3D"0" cellpad=
+ding=3D"0" cellspacing=3D"0" role=3D"presentation" width=3D"484" style=3D"b=
+order-collapse:collapse;mso-table-lspace:0;mso-table-rspace:0;width:484px">=
+<tbody><tr align=3D"left" valign=3D"middle" style=3D"font-size:0"><td align=
+=3D"center" style=3D"border-collapse:collapse;mso-table-lspace:0;mso-table-=
+rspace:0;color:#444;text-align:center;padding:2px;font-family:'IBM Plex Mon=
+o',Inter,Segoe UI,Roboto,Arial,verdana,geneva,sans-serif;font-size:10px;lin=
+e-height:16px;direction:ltr;min-width:16px;max-width:45px" width=3D"2%" bgc=
+olor=3D"#ffffff">2</td><td align=3D"center" style=3D"border-collapse:collap=
+se;mso-table-lspace:0;mso-table-rspace:0;color:#212121;text-align:center;pa=
+dding:2px;font-family:'IBM Plex Mono',Inter,Segoe UI,Roboto,Arial,verdana,g=
+eneva,sans-serif;font-size:10px;line-height:16px;width:65px;direction:ltr;m=
+ax-width:65px" width=3D"65" bgcolor=3D"#f9f9f9">19:&zwnj;13:&zwnj;01</td><t=
+d align=3D"left" style=3D"border-collapse:collapse;mso-table-lspace:0;mso-t=
+able-rspace:0;color:#212121;padding:2px 2px 2px 4px;font-family:'IBM Plex M=
+ono',Inter,Segoe UI,Roboto,Arial,verdana,geneva,sans-serif;word-break:break=
+-all;word-wrap:break-word;overflow:hidden;font-size:10px;line-height:16px;t=
+ext-align:left;direction:ltr;width:378px;max-width:378px" width=3D"378">POS=
+T http:&zwnj;//{{baseurl}}/api-clients/</td></tr></tbody></table><table ali=
+gn=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"pres=
+entation" width=3D"484" style=3D"border-collapse:collapse;mso-table-lspace:=
+0;mso-table-rspace:0;width:484px"><tbody><tr align=3D"left" valign=3D"middl=
+e" style=3D"font-size:0"><td align=3D"center" style=3D"border-collapse:coll=
+apse;mso-table-lspace:0;mso-table-rspace:0;color:#444;text-align:center;pad=
+ding:2px;font-family:'IBM Plex Mono',Inter,Segoe UI,Roboto,Arial,verdana,ge=
+neva,sans-serif;font-size:10px;line-height:16px;direction:ltr;min-width:16p=
+x;max-width:45px" width=3D"2%" bgcolor=3D"#ffffff">3</td><td align=3D"cente=
+r" style=3D"border-collapse:collapse;mso-table-lspace:0;mso-table-rspace:0;=
+color:#212121;text-align:center;padding:2px;font-family:'IBM Plex Mono',Int=
+er,Segoe UI,Roboto,Arial,verdana,geneva,sans-serif;font-size:10px;line-heig=
+ht:16px;width:65px;direction:ltr;max-width:65px" width=3D"65" bgcolor=3D"#f=
+9f9f9">19:&zwnj;13:&zwnj;01</td><td align=3D"left" style=3D"border-collapse=
+:collapse;mso-table-lspace:0;mso-table-rspace:0;color:#b70700;padding:2px 2=
+px 2px 4px;font-family:'IBM Plex Mono',Inter,Segoe UI,Roboto,Arial,verdana,=
+geneva,sans-serif;word-break:break-all;word-wrap:break-word;overflow:hidden=
+;font-size:10px;line-height:16px;text-align:left;direction:ltr;width:378px;=
+max-width:378px" width=3D"378">Error:&zwnj; getaddrinfo ENOTFOUND {{baseurl=
+}} </td></tr></tbody></table><table align=3D"center" border=3D"0" cellpaddi=
+ng=3D"0" cellspacing=3D"0" role=3D"presentation" width=3D"484" style=3D"bor=
+der-collapse:collapse;mso-table-lspace:0;mso-table-rspace:0;width:484px"><t=
+body><tr align=3D"left" valign=3D"middle" style=3D"font-size:0"><td align=
+=3D"center" style=3D"border-collapse:collapse;mso-table-lspace:0;mso-table-=
+rspace:0;color:#444;text-align:center;padding:2px;font-family:'IBM Plex Mon=
+o',Inter,Segoe UI,Roboto,Arial,verdana,geneva,sans-serif;font-size:10px;lin=
+e-height:16px;direction:ltr;min-width:16px;max-width:45px" width=3D"2%" bgc=
+olor=3D"#ffffff">4</td><td align=3D"center" style=3D"border-collapse:collap=
+se;mso-table-lspace:0;mso-table-rspace:0;color:#212121;text-align:center;pa=
+dding:2px;font-family:'IBM Plex Mono',Inter,Segoe UI,Roboto,Arial,verdana,g=
+eneva,sans-serif;font-size:10px;line-height:16px;width:65px;direction:ltr;m=
+ax-width:65px" width=3D"65" bgcolor=3D"#f9f9f9">19:&zwnj;13:&zwnj;01</td><t=
+d align=3D"left" style=3D"border-collapse:collapse;mso-table-lspace:0;mso-t=
+able-rspace:0;color:#b70700;padding:2px 2px 2px 4px;font-family:'IBM Plex M=
+ono',Inter,Segoe UI,Roboto,Arial,verdana,geneva,sans-serif;word-break:break=
+-all;word-wrap:break-word;overflow:hidden;font-size:10px;line-height:16px;t=
+ext-align:left;direction:ltr;width:378px;max-width:378px" width=3D"378">Fai=
+led:&zwnj; Validate response code is 201</td></tr></tbody></table><table al=
+ign=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"pre=
+sentation" width=3D"484" style=3D"border-collapse:collapse;mso-table-lspace=
+:0;mso-table-rspace:0;border-bottom:1px solid #e6e6e6;width:484px"><tbody><=
+tr align=3D"left" valign=3D"middle" style=3D"font-size:0"><td align=3D"cent=
+er" style=3D"border-collapse:collapse;mso-table-lspace:0;mso-table-rspace:0=
+;color:#444;text-align:center;padding:2px;font-family:'IBM Plex Mono',Inter=
+,Segoe UI,Roboto,Arial,verdana,geneva,sans-serif;font-size:10px;line-height=
+:16px;direction:ltr;min-width:16px;max-width:45px" width=3D"2%" bgcolor=3D"=
+#ffffff">5</td><td align=3D"center" style=3D"border-collapse:collapse;mso-t=
+able-lspace:0;mso-table-rspace:0;color:#212121;text-align:center;padding:2p=
+x;font-family:'IBM Plex Mono',Inter,Segoe UI,Roboto,Arial,verdana,geneva,sa=
+ns-serif;font-size:10px;line-height:16px;width:65px;direction:ltr;max-width=
+:65px" width=3D"65" bgcolor=3D"#f9f9f9">19:&zwnj;13:&zwnj;01</td><td align=
+=3D"left" style=3D"border-collapse:collapse;mso-table-lspace:0;mso-table-rs=
+pace:0;color:#b70700;padding:2px 2px 2px 4px;font-family:'IBM Plex Mono',In=
+ter,Segoe UI,Roboto,Arial,verdana,geneva,sans-serif;word-break:break-all;wo=
+rd-wrap:break-word;overflow:hidden;font-size:10px;line-height:16px;text-ali=
+gn:left;direction:ltr;width:378px;max-width:378px" width=3D"378">expected u=
+ndefined to equal 201</td></tr></tbody></table></td></tr><tr><td align=3D"l=
+eft" style=3D"font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Ubu=
+ntu,Arial,sans-serif;border-collapse:collapse;mso-table-lspace:0;mso-table-=
+rspace:0;font-size:0;padding:0;word-break:break-word"><div style=3D"padding=
+-top:32px;font-family:Inter,Segoe UI,Roboto,Arial,verdana,geneva,sans-serif=
+;font-size:11px;font-style:normal;font-weight:400;line-height:18px;text-ali=
+gn:left;color:#6b6b6b">This email was sent to olamide.&zwnj;oluwole0908@gma=
+il.&zwnj;com, which is associated with a Postman account.</div></td></tr><t=
+r><td align=3D"center" style=3D"font-family:Inter,system-ui,-apple-system,S=
+egoe UI,Roboto,Ubuntu,Arial,sans-serif;border-collapse:collapse;mso-table-l=
+space:0;mso-table-rspace:0;font-size:0;padding:18px 0 15px 0;word-break:bre=
+ak-word"><p style=3D"font-family:Inter,system-ui,-apple-system,Segoe UI,Rob=
+oto,Ubuntu,Arial,sans-serif;border-top:solid 2px #ededed;font-size:1px;marg=
+in:0 auto;width:100%"></p><!--[if mso | IE]><table align=3D"center" border=
+=3D"0" cellpadding=3D"0" cellspacing=3D"0" style=3D"border-top:solid 2px #E=
+DEDED;font-size:1px;margin:0px auto;width:502px;" role=3D"presentation" wid=
+th=3D"502px"><tr><td style=3D"height:0;line-height:0;">&nbsp;</td></tr></ta=
+ble><![endif]--></td></tr><tr><td align=3D"left" style=3D"font-family:Inter=
+,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Arial,sans-serif;border-col=
+lapse:collapse;mso-table-lspace:0;mso-table-rspace:0;font-size:0;padding:0;=
+word-break:break-word"><div style=3D"font-family:Inter,Segoe UI,Roboto,Aria=
+l,verdana,geneva,sans-serif;font-size:11px;font-style:normal;font-weight:40=
+0;line-height:18px;text-align:left;color:#a6a6a6">=A9 2023 Postman Inc. All=
+ Rights Reserved<br>201 Mission Street, Suite 2375, San Francisco, CA 94105=
+</div><div style=3D"display:none;font-size:1px;color:#fff;line-height:1px;m=
+ax-height:0;max-width:0;width:0;height:0;opacity:0;overflow:hidden">MONITOR=
+ ID: 1ee84b34-de74-4a80-925c-0d9f86e96ffe</div><div style=3D"display:none;f=
+ont-size:1px;color:#fff;line-height:1px;max-height:0;max-width:0;width:0;he=
+ight:0;opacity:0;overflow:hidden">JOB ID: 1ee84b42-729b-4ad0-ab95-958f18cee=
+df7</div></td></tr></tbody></table></td></tr></table></td></tr></table></td=
+></tr></table></div></center><img src=3D"https://links.getpostman.com/wf/op=
+en?upn=3DMIHdz4mYIsxQVLK-2B7DB75FTmwsq7bgAqpMp1K1h93TtG5dXWfkb3-2F5LDvqGyaG=
+6krJB-2Bf3OtmMsGJyB2TLSpfxUaVoQ5N5fjH7wfCvyVrGZP6PhZDEtt23wnct4ANvmxkARZA8Q=
+48q6wFggsgiYXD0lnYhGqnNy3poVSxJ7UwjbB1qJixwjNjGPQAtrJenrJuzu91fHLHsvJCqm0vL=
+9SapT-2BIJSiFkUExewOnFNI7R92ls4VidzzOC8OI3-2FrTFBJtoO-2BWoOSpoMvyGkVAhY3lct=
+AzryiIlb-2Bm4yMOiYrbv4RNPWp0xuDKMDGtaKEcFYlOY1tHcOSUea4JGMdhG42Eaof2sTfjOB5=
+tp9yV-2FcbfGzPsVh1ISuKIBmpWVCJswkl" alt=3D"" width=3D"1" height=3D"1" borde=
+r=3D"0" style=3D"height:1px !important;width:1px !important;border-width:0 =
+!important;margin-top:0 !important;margin-bottom:0 !important;margin-right:=
+0 !important;margin-left:0 !important;padding-top:0 !important;padding-bott=
+om:0 !important;padding-right:0 !important;padding-left:0 !important;"/></b=
+ody></html>
