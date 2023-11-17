@@ -15,7 +15,9 @@
 						"exec": [
 							"pm.test(\"Validate response code is 200\", function(){\r",
 							"    pm.expect(pm.response.code).to.equal(200);\r",
-							"})"
+							"})\r",
+							"\r",
+							"postman.setNextRequest(\"Place a book order\")"
 						],
 						"type": "text/javascript"
 					}
@@ -28,7 +30,7 @@
 			"request": {
 				"method": "GET",
 				"header": [],
-				"url": "https://simple-books-api.glitch.me/"
+				"url": "{{baseUrl}}"
 			},
 			"response": []
 		},
@@ -190,7 +192,9 @@
 							"if (pm.response.code == 201){\r",
 							"const responsebody = pm.response.json()\r",
 							"pm.environment.set(\"orderid\", responsebody.orderId)\r",
-							"}"
+							"}\r",
+							"\r",
+							"postman.setNextRequest(null)"
 						],
 						"type": "text/javascript"
 					}
