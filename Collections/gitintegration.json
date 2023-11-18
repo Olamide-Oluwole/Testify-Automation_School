@@ -366,6 +366,48 @@
 			"response": []
 		},
 		{
+			"name": "Update an order with invalid order id",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "b4a0469b-5890-4fef-9c77-4821a4f24acd",
+						"exec": [
+							"pm.test(\"Validate response code to update an order is 204\", function(){\r",
+							"    pm.expect(pm.response.code).to.equal(204);\r",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"id": "5cac93dc-9e30-4d59-9e69-23cb90a405f6",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "{{accessToken}}"
+					}
+				},
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"customerName\": \"{{$randomFirstName}}\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "{{baseUrl}}/orders/{{orderid}}"
+			},
+			"response": []
+		},
+		{
 			"name": "Delete an order",
 			"event": [
 				{
