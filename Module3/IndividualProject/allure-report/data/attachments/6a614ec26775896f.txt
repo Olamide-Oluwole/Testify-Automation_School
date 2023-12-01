@@ -1,0 +1,1 @@
+{"senders":[{"id":1,"name":"Thequalityadvocate","email":"olamide.oluwole0908@gmail.com","active":true,"ips":[]},{"id":2,"name":"Newsletter","email":"newsletter@mycompany.com","active":false,"ips":[]}]}

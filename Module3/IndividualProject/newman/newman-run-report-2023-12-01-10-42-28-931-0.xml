@@ -1,0 +1,1118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="Brevo" tests="206" time="92.347">
+  <testsuite name="Transactional / Email API / Send a transactional email" id="86561479-201c-4e0e-ab03-158614d84c97" timestamp="2023-12-01T10:31:53.911Z" tests="3" failures="0" errors="0" time="0.444">
+    <testcase name="Verify status code is 201" time="0.444" classname="Brevo"/>
+    <testcase name="Verify the messageId is not empty" time="0.444" classname="Brevo"/>
+    <testcase name="Verify the messageId is a string" time="0.444" classname="Brevo"/>
+  </testsuite>
+  <testsuite name="Transactional / Email API / Get the list of transactional emails on the basis of allowed filters" id="4851a9a2-9c23-46bc-9d64-aabc5f5ae102" timestamp="2023-12-01T10:31:53.911Z" tests="7" failures="0" errors="0" time="0.363">
+    <testcase name="Verify status code is 200" time="0.363" classname="Brevo"/>
+    <testcase name="Verify the messageId is not empty" time="0.363" classname="Brevo"/>
+    <testcase name="Verify the uuid is not empty" time="0.363" classname="Brevo"/>
+    <testcase name="Verify the response schema" time="0.363" classname="Brevo"/>
+    <testcase name="Verify that the count value is a number" time="0.363" classname="Brevo"/>
+    <testcase name="Verify that the transactionalEmails value is an array" time="0.363" classname="Brevo"/>
+    <testcase name="Verify the Content Type" time="0.363" classname="Brevo"/>
+  </testsuite>
+  <testsuite name="Transactional / Email API / Get the personalized content of a sent transactional email" id="c2ca9b8e-e418-4a17-ad85-1b7e1977e4ae" timestamp="2023-12-01T10:31:53.911Z" tests="3" failures="0" errors="0" time="0.521">
+    <testcase name="Verify status code is 200" time="0.521" classname="Brevo"/>
+    <testcase name="Verify the sender's email is the same as the email returned" time="0.521" classname="Brevo"/>
+    <testcase name="Verify response should have at least one event in the events array" time="0.521" classname="Brevo"/>
+  </testsuite>
+  <testsuite name="Transactional / Email API / Send a scheduled transactional email" id="3248e68c-2e2f-49a9-a6e9-1678b4dc0e35" timestamp="2023-12-01T10:31:53.911Z" tests="3" failures="0" errors="0" time="0.230">
+    <testcase name="Verify status code is 202" time="0.230" classname="Brevo"/>
+    <testcase name="Verify the messageId for a scheduled message is not empty" time="0.230" classname="Brevo"/>
+    <testcase name="Verify the messageId is a string" time="0.230" classname="Brevo"/>
+  </testsuite>
+  <testsuite name="Transactional / Email API / Fetch scheduled emails by batchId or messageId" id="eae1eb06-2d3f-452d-99b1-9f91b4c74beb" timestamp="2023-12-01T10:31:53.911Z" tests="3" failures="0" errors="0" time="0.388">
+    <testcase name="Verify status code is 200" time="0.388" classname="Brevo"/>
+    <testcase name="Verify response JSON keys includes scheduledAt, createdAt, and status" time="0.388" classname="Brevo"/>
+    <testcase name="Response JSON values for scheduledAt, createdAt, and status should not be null or empty" time="0.388" classname="Brevo"/>
+  </testsuite>
+  <testsuite name="Transactional / Email API / Delete scheduled emails by batchId or messageId" id="b636affe-34c6-4f20-bd78-781cd76e0b1d" timestamp="2023-12-01T10:31:53.911Z" tests="1" failures="0" errors="0" time="1.151">
+    <testcase name="Verify date is present" time="1.151" classname="Brevo"/>
+  </testsuite>
+  <testsuite name="Transactional / Templates / Create an email template" id="f0f75309-9fc6-4d40-8963-e79ec1be9964" timestamp="2023-12-01T10:31:53.911Z" tests="3" failures="0" errors="0" time="0.469">
+    <testcase name="Verify status code is 201" time="0.469" classname="Brevo"/>
+    <testcase name="Verify response JSON &quot;id&quot; value should be a number" time="0.469" classname="Brevo"/>
+    <testcase name="Response JSON should include an &quot;id&quot; field" time="0.469" classname="Brevo"/>
+  </testsuite>
+  <testsuite name="Transactional / Templates / Get the list of email templates" id="f7c977d0-59b7-4cc9-87e1-47451a83c24c" timestamp="2023-12-01T10:31:53.911Z" tests="4" failures="0" errors="0" time="0.441">
+    <testcase name="Verify the response code is 200" time="0.441" classname="Brevo"/>
+    <testcase name="Response JSON values for count should be a number" time="0.441" classname="Brevo"/>
+    <testcase name="Response JSON values for templates should be an array" time="0.441" classname="Brevo"/>
+    <testcase name="Verify the count is valid" time="0.441" classname="Brevo"/>
+  </testsuite>
+  <testsuite name="Transactional / Templates / Returns the template information" id="2edfc95e-bbb0-4eb8-a890-0e9d08e95f47" timestamp="2023-12-01T10:31:53.911Z" tests="4" failures="0" errors="0" time="0.696">
+    <testcase name="Verify the response code is 200" time="0.696" classname="Brevo"/>
+    <testcase name="Response JSON values for id should be a number" time="0.696" classname="Brevo"/>
+    <testcase name="Response JSON values should be an object" time="0.696" classname="Brevo"/>
+    <testcase name="Validate sender's email is olamide.oluwole0908@gmail.com" time="0.696" classname="Brevo"/>
+  </testsuite>
+  <testsuite name="Transactional / Templates / Update an email template" id="e9bb1048-8c46-4942-945d-a283ab25bd3c" timestamp="2023-12-01T10:31:53.911Z" tests="3" failures="0" errors="0" time="0.606">
+    <testcase name="Verify response time is less than 200ms" time="0.606" classname="Brevo"/>
+    <testcase name="Verify status code name has string" time="0.606" classname="Brevo"/>
+    <testcase name="Verify header has a date property" time="0.606" classname="Brevo"/>
+  </testsuite>
+  <testsuite name="Transactional / Templates / Delete an inactive email template" id="2d69b12d-1476-41ac-a561-6ffb607447c9" timestamp="2023-12-01T10:31:53.911Z" tests="2" failures="0" errors="0" time="0.253">
+    <testcase name="Verify response code is 204" time="0.253" classname="Brevo"/>
+    <testcase name="Response time should be less than 500ms" time="0.253" classname="Brevo"/>
+  </testsuite>
+  <testsuite name="Transactional / Templates / Send a template to your test list" id="5994d511-c107-4b8d-83d3-8c7390a8ab20" timestamp="2023-12-01T10:31:53.911Z" tests="3" failures="1" errors="0" time="0.234">
+    <testcase name="Verify response code is 204" time="0.234" classname="Brevo">
+      <failure type="AssertionFailure" message="expected 400 to deeply equal 204">
+        <![CDATA[Failed 1 times.]]>
+        <![CDATA[Collection JSON ID: c432a5c9-86c9-4812-b55e-6e55a25a70ea.]]>
+        <![CDATA[Collection name: Brevo.]]>
+        <![CDATA[Request name: Transactional / Templates / Send a template to your test list.]]>
+        <![CDATA[Test description: Verify response code is 204.]]>
+        <![CDATA[Error message: expected 400 to deeply equal 204.]]>
+        <![CDATA[Stacktrace: AssertionError: expected 400 to deeply equal 204
+   at Object.eval sandbox-script.js:1:12).]]>
+      </failure>
+    </testcase>
+    <testcase name="Response time should be less than 800ms" time="0.234" classname="Brevo"/>
+    <testcase name="Verify the Header" time="0.234" classname="Brevo"/>
+  </testsuite>
+  <testsuite name="Transactional / Statistics / Get your transactional email activity aggregated over a period of time" id="4a37f227-ab96-4255-885c-2587bbc57a22" timestamp="2023-12-01T10:31:53.911Z" tests="5" failures="0" errors="0" time="0.297">
+    <testcase name="Validate status is 200" time="0.297" classname="Brevo"/>
+    <testcase name="Validate response JSON keys include all required parameters" time="0.297" classname="Brevo"/>
+    <testcase name="Verify response JSON values for requests" time="0.297" classname="Brevo"/>
+    <testcase name="Verify response time is less than 1500ms" time="0.297" classname="Brevo"/>
+    <testcase name="Verify Content-Type is present" time="0.297" classname="Brevo"/>
+  </testsuite>
+  <testsuite name="Transactional / Statistics / Get your transactional email activity aggregated per day" id="7014a883-94c4-4734-bea7-c1e3fe9406a1" timestamp="2023-12-01T10:31:53.911Z" tests="3" failures="0" errors="0" time="0.301">
+    <testcase name="Response status code is 200" time="0.301" classname="Brevo"/>
+    <testcase name="Verify reports array is present and contains at least one element" time="0.301" classname="Brevo"/>
+    <testcase name="Verify date field is in a valid date format for each report" time="0.301" classname="Brevo"/>
+  </testsuite>
+  <testsuite name="Transactional / Statistics / Get all your transactional email activity (unaggregated events)" id="d4f0bc0b-7c5a-46a8-9d5a-4f18e6c7e2d2" timestamp="2023-12-01T10:31:53.911Z" tests="3" failures="3" errors="0" time="0.217">
+    <testcase name="Response status code is 200" time="0.217" classname="Brevo">
+      <failure type="AssertionFailure" message="expected 404 to equal 200">
+        <![CDATA[Failed 1 times.]]>
+        <![CDATA[Collection JSON ID: c432a5c9-86c9-4812-b55e-6e55a25a70ea.]]>
+        <![CDATA[Collection name: Brevo.]]>
+        <![CDATA[Request name: Transactional / Statistics / Get all your transactional email activity (unaggregated events).]]>
+        <![CDATA[Test description: Response status code is 200.]]>
+        <![CDATA[Error message: expected 404 to equal 200.]]>
+        <![CDATA[Stacktrace: AssertionError: expected 404 to equal 200
+   at Object.eval sandbox-script.js:1:15).]]>
+      </failure>
+    </testcase>
+    <testcase name="All event objects contain required properties" time="0.217" classname="Brevo">
+      <failure type="AssertionFailure" message="expected undefined to be an array">
+        <![CDATA[Failed 1 times.]]>
+        <![CDATA[Collection JSON ID: c432a5c9-86c9-4812-b55e-6e55a25a70ea.]]>
+        <![CDATA[Collection name: Brevo.]]>
+        <![CDATA[Request name: Transactional / Statistics / Get all your transactional email activity (unaggregated events).]]>
+        <![CDATA[Test description: All event objects contain required properties.]]>
+        <![CDATA[Error message: expected undefined to be an array.]]>
+        <![CDATA[Stacktrace: AssertionError: expected undefined to be an array
+   at Object.eval sandbox-script.js:2:15).]]>
+      </failure>
+    </testcase>
+    <testcase name="Validate response against saved 'messageId' value" time="0.217" classname="Brevo">
+      <failure type="AssertionFailure" message="Cannot read properties of undefined (reading 'forEach')">
+        <![CDATA[Failed 1 times.]]>
+        <![CDATA[Collection JSON ID: c432a5c9-86c9-4812-b55e-6e55a25a70ea.]]>
+        <![CDATA[Collection name: Brevo.]]>
+        <![CDATA[Request name: Transactional / Statistics / Get all your transactional email activity (unaggregated events).]]>
+        <![CDATA[Test description: Validate response against saved 'messageId' value.]]>
+        <![CDATA[Error message: Cannot read properties of undefined (reading 'forEach').]]>
+        <![CDATA[Stacktrace: TypeError: Cannot read properties of undefined (reading 'forEach')
+   at Object.eval sandbox-script.js:3:15).]]>
+      </failure>
+    </testcase>
+  </testsuite>
+  <testsuite name="Transactional / Blocked Contacts / Get the list of blocked or unsubscribed transactional contacts" id="32f6ecab-ba42-4a39-8d52-94a67f689d14" timestamp="2023-12-01T10:31:53.911Z" tests="6" failures="0" errors="0" time="0.252">
+    <testcase name="Verify schema is valid" time="0.252" classname="Brevo"/>
+    <testcase name="Verify response time is within acceptable range" time="0.252" classname="Brevo"/>
+    <testcase name="Verify response status code is 200" time="0.252" classname="Brevo"/>
+    <testcase name="Verify count is a non-negative integer" time="0.252" classname="Brevo"/>
+    <testcase name="BlockedAt is in a valid date-time format" time="0.252" classname="Brevo"/>
+    <testcase name="Contacts array is present and has the expected number of elements" time="0.252" classname="Brevo"/>
+  </testsuite>
+  <testsuite name="Transactional / Blocked Contacts / Unblock or resubscribe a transactional contact" id="d48e7f90-1c3e-4fdf-9b7d-c14076b92de6" timestamp="2023-12-01T10:31:53.911Z" tests="5" failures="0" errors="0" time="0.239">
+    <testcase name="Status code is 404" time="0.239" classname="Brevo"/>
+    <testcase name="Verify the response is an object with code and message properties" time="0.239" classname="Brevo"/>
+    <testcase name="Verify response message is descriptive and informative" time="0.239" classname="Brevo"/>
+    <testcase name="Verify code property is a non-empty string" time="0.239" classname="Brevo"/>
+    <testcase name="Verify response time is within acceptable range" time="0.239" classname="Brevo"/>
+  </testsuite>
+  <testsuite name="Transactional / Blocked Domains / Get the list of blocked domains" id="ccd75188-117a-468c-bbe0-feef13457a98" timestamp="2023-12-01T10:31:53.911Z" tests="5" failures="0" errors="0" time="0.208">
+    <testcase name="Verify response status code is 200" time="0.208" classname="Brevo"/>
+    <testcase name="Verify domains array is present and contains expected number of elements" time="0.208" classname="Brevo"/>
+    <testcase name="Each domain in the 'domains' array is a non-empty string" time="0.208" classname="Brevo"/>
+    <testcase name="Response contains the required fields" time="0.208" classname="Brevo"/>
+    <testcase name="No duplicate domains in the response" time="0.208" classname="Brevo"/>
+  </testsuite>
+  <testsuite name="Transactional / Blocked Domains / Add a new domain to the list of blocked domains" id="055f122a-c402-445e-8b37-14aed63a64e2" timestamp="2023-12-01T10:31:53.911Z" tests="5" failures="0" errors="0" time="0.318">
+    <testcase name="Verify response status code is 201" time="0.318" classname="Brevo"/>
+    <testcase name="Verify response body should be empty" time="0.318" classname="Brevo"/>
+    <testcase name="Blocked_domain variable is set in collection variables" time="0.318" classname="Brevo"/>
+    <testcase name="Response headers contain the necessary information" time="0.318" classname="Brevo"/>
+    <testcase name="Response time is less than 500ms" time="0.318" classname="Brevo"/>
+  </testsuite>
+  <testsuite name="Transactional / Blocked Domains / Unblock an existing domain from the list of blocked domains" id="58551b1f-69d3-4c35-bdaa-6da62ed3ca12" timestamp="2023-12-01T10:31:53.911Z" tests="3" failures="0" errors="0" time="0.268">
+    <testcase name="Verify Date is present in the header" time="0.268" classname="Brevo"/>
+    <testcase name="Response time is less than 400ms" time="0.268" classname="Brevo"/>
+    <testcase name="Status code name has string" time="0.268" classname="Brevo"/>
+  </testsuite>
+  <testsuite name="Transactional / Logs / Delete hardbounces" id="31e5373d-0336-4cbe-a929-4e730f51265b" timestamp="2023-12-01T10:31:53.911Z" tests="3" failures="0" errors="0" time="0.208">
+    <testcase name="Verify response status code is 200" time="0.208" classname="Brevo"/>
+    <testcase name="Verify response is an object" time="0.208" classname="Brevo"/>
+    <testcase name="Verify response does not have any properties" time="0.208" classname="Brevo"/>
+  </testsuite>
+  <testsuite name="Transactional / Logs / Send a scheduled transactional email" id="605e7dc2-1a4e-4261-ad1a-d8660c02f3eb" timestamp="2023-12-01T10:31:53.911Z" tests="3" failures="0" errors="0" time="0.192">
+    <testcase name="Verify status code is 202" time="0.192" classname="Brevo"/>
+    <testcase name="Verify the messageId for a scheduled message is not empty" time="0.192" classname="Brevo"/>
+    <testcase name="Verify the messageId is a string" time="0.192" classname="Brevo"/>
+  </testsuite>
+  <testsuite name="Transactional / Logs / Delete an SMTP transactional log" id="812dc5d7-659a-4dab-beb5-6b7075c32669" timestamp="2023-12-01T10:31:53.911Z" tests="0" failures="0" errors="0" time="0.449"/>
+  <testsuite name="Transactional / Inbound Email Parsing / Get the list of all the events for the received emails." id="889619fe-9dda-49f1-b283-cd37ab600a1b" timestamp="2023-12-01T10:31:53.911Z" tests="3" failures="0" errors="0" time="0.307">
+    <testcase name="Response status code is 200" time="0.307" classname="Brevo"/>
+    <testcase name="Events array is present" time="0.307" classname="Brevo"/>
+    <testcase name="Date field is in valid date format for each event" time="0.307" classname="Brevo"/>
+  </testsuite>
+  <testsuite name="Transactional / Inbound Email Parsing / Fetch all events history for one particular received email." id="4148c6f6-251f-4ae2-ada8-80f4ba0d5e48" timestamp="2023-12-01T10:31:53.911Z" tests="3" failures="0" errors="0" time="0.352">
+    <testcase name="Status code is 404" time="0.352" classname="Brevo"/>
+    <testcase name="Code and message fields are present in the response" time="0.352" classname="Brevo"/>
+    <testcase name="Response has the correct content type" time="0.352" classname="Brevo"/>
+  </testsuite>
+  <testsuite name="Transactional / Inbound Email Parsing / Retrieve inbound attachment with download token." id="8bef5864-d7af-44a8-a6c3-b0e8d98a100e" timestamp="2023-12-01T10:31:53.911Z" tests="0" failures="0" errors="0" time="0.341"/>
+  <testsuite name="Transactional / Transactional SMS / Send SMS message to a mobile number" id="7b6929f0-9a59-450a-8a68-45da4587bae7" timestamp="2023-12-01T10:31:53.911Z" tests="3" failures="0" errors="0" time="0.327">
+    <testcase name="Response status code is 400" time="0.327" classname="Brevo"/>
+    <testcase name="Response has the required fields" time="0.327" classname="Brevo"/>
+    <testcase name="Verify message is a non-empty string" time="0.327" classname="Brevo"/>
+  </testsuite>
+  <testsuite name="Transactional / SMS statistics / Get your SMS activity aggregated over a period of time" id="67b573b2-5e73-4ecb-8ae1-c226cf9d8fba" timestamp="2023-12-01T10:31:53.911Z" tests="3" failures="0" errors="0" time="0.365">
+    <testcase name="Response time is less than 600ms" time="0.365" classname="Brevo"/>
+    <testcase name="Response status code is 200" time="0.365" classname="Brevo"/>
+    <testcase name="Response has the correct content type" time="0.365" classname="Brevo"/>
+  </testsuite>
+  <testsuite name="Transactional / SMS statistics / Get your SMS activity aggregated per day" id="296f40bf-65fb-45b4-b781-ed948fe3b796" timestamp="2023-12-01T10:31:53.911Z" tests="2" failures="0" errors="0" time="0.343">
+    <testcase name="Response time is less than 600ms" time="0.343" classname="Brevo"/>
+    <testcase name="Response status code is 200" time="0.343" classname="Brevo"/>
+  </testsuite>
+  <testsuite name="Transactional / SMS statistics / Get all your SMS activity (unaggregated events)" id="8bca9958-2d81-4f56-aa24-420f19b3fb70" timestamp="2023-12-01T10:31:53.911Z" tests="3" failures="0" errors="0" time="0.355">
+    <testcase name="Response time is less than 600ms" time="0.355" classname="Brevo"/>
+    <testcase name="Response status code is 200" time="0.355" classname="Brevo"/>
+    <testcase name="Response has the correct content type" time="0.355" classname="Brevo"/>
+  </testsuite>
+  <testsuite name="Transactional / WhatsApp Transactional / Send a WhatsApp message" id="6dc6bc0b-ba79-4f74-a843-f94f62039b83" timestamp="2023-12-01T10:31:53.911Z" tests="0" failures="0" errors="0" time="0.234"/>
+  <testsuite name="Transactional / WhatsApp Transactional / Get all your WhatsApp activity (unaggregated events) Copy" id="a3472d47-2201-470e-971b-64f7d42f5b22" timestamp="2023-12-01T10:31:53.911Z" tests="0" failures="0" errors="0" time="0.276"/>
+  <testsuite name="Marketing / Email Campaigns / Create an email campaign" id="043a06e9-b7a6-4710-bfec-0ddd458642ee" timestamp="2023-12-01T10:31:53.911Z" tests="6" failures="1" errors="0" time="0.816">
+    <testcase name="Verify response status code is 201" time="0.816" classname="Brevo"/>
+    <testcase name="Verify response is an object with id property" time="0.816" classname="Brevo"/>
+    <testcase name="Validate response id against saved value" time="0.816" classname="Brevo"/>
+    <testcase name="Verify Id is a non-negative integer" time="0.816" classname="Brevo"/>
+    <testcase name="Verify Id is unique for each response" time="0.816" classname="Brevo"/>
+    <testcase name="Verify response time is within an acceptable range" time="0.816" classname="Brevo">
+      <failure type="AssertionFailure" message="expected 816 to be below 300">
+        <![CDATA[Failed 1 times.]]>
+        <![CDATA[Collection JSON ID: c432a5c9-86c9-4812-b55e-6e55a25a70ea.]]>
+        <![CDATA[Collection name: Brevo.]]>
+        <![CDATA[Request name: Marketing / Email Campaigns / Create an email campaign.]]>
+        <![CDATA[Test description: Verify response time is within an acceptable range.]]>
+        <![CDATA[Error message: expected 816 to be below 300.]]>
+        <![CDATA[Stacktrace: AssertionError: expected 816 to be below 300
+   at Object.eval sandbox-script.js:6:33).]]>
+      </failure>
+    </testcase>
+  </testsuite>
+  <testsuite name="Marketing / Email Campaigns / Get an email campaign report" id="c22bbaf4-0e05-452d-b40e-d9f006fffa79" timestamp="2023-12-01T10:31:53.911Z" tests="4" failures="0" errors="0" time="0.291">
+    <testcase name="Response status code is 200" time="0.291" classname="Brevo"/>
+    <testcase name="Validate the sender object - name, id, email" time="0.291" classname="Brevo"/>
+    <testcase name="Recipients object contains lists and exclusionLists arrays" time="0.291" classname="Brevo"/>
+    <testcase name="Ensure that statistics object contains globalStats and statsByDevice" time="0.291" classname="Brevo"/>
+  </testsuite>
+  <testsuite name="Marketing / Email Campaigns / Update an email campaign" id="c182d3d3-374a-4855-8746-6ab121e080f8" timestamp="2023-12-01T10:31:53.911Z" tests="3" failures="1" errors="0" time="0.600">
+    <testcase name="Status code is 204" time="0.600" classname="Brevo"/>
+    <testcase name="Verify date is present in the header" time="0.600" classname="Brevo"/>
+    <testcase name="Response time is less than 300ms" time="0.600" classname="Brevo">
+      <failure type="AssertionFailure" message="expected 600 to be below 200">
+        <![CDATA[Failed 1 times.]]>
+        <![CDATA[Collection JSON ID: c432a5c9-86c9-4812-b55e-6e55a25a70ea.]]>
+        <![CDATA[Collection name: Brevo.]]>
+        <![CDATA[Request name: Marketing / Email Campaigns / Update an email campaign.]]>
+        <![CDATA[Test description: Response time is less than 300ms.]]>
+        <![CDATA[Error message: expected 600 to be below 200.]]>
+        <![CDATA[Stacktrace: AssertionError: expected 600 to be below 200
+   at Object.eval sandbox-script.js:3:35).]]>
+      </failure>
+    </testcase>
+  </testsuite>
+  <testsuite name="Marketing / Email Campaigns / Delete an email campaign" id="12467888-f164-4c7f-a2c3-94432ecbe178" timestamp="2023-12-01T10:31:53.911Z" tests="3" failures="2" errors="0" time="0.401">
+    <testcase name="Status code is 204" time="0.401" classname="Brevo">
+      <failure type="AssertionFailure" message="expected response to have status code 204 but got 429">
+        <![CDATA[Failed 1 times.]]>
+        <![CDATA[Collection JSON ID: c432a5c9-86c9-4812-b55e-6e55a25a70ea.]]>
+        <![CDATA[Collection name: Brevo.]]>
+        <![CDATA[Request name: Marketing / Email Campaigns / Delete an email campaign.]]>
+        <![CDATA[Test description: Status code is 204.]]>
+        <![CDATA[Error message: expected response to have status code 204 but got 429.]]>
+        <![CDATA[Stacktrace: AssertionError: expected response to have status code 204 but got 429
+   at Object.eval sandbox-script.js:1:36).]]>
+      </failure>
+    </testcase>
+    <testcase name="Verify date is present in the header" time="0.401" classname="Brevo"/>
+    <testcase name="Response time is less than 300ms" time="0.401" classname="Brevo">
+      <failure type="AssertionFailure" message="expected 401 to be below 200">
+        <![CDATA[Failed 1 times.]]>
+        <![CDATA[Collection JSON ID: c432a5c9-86c9-4812-b55e-6e55a25a70ea.]]>
+        <![CDATA[Collection name: Brevo.]]>
+        <![CDATA[Request name: Marketing / Email Campaigns / Delete an email campaign.]]>
+        <![CDATA[Test description: Response time is less than 300ms.]]>
+        <![CDATA[Error message: expected 401 to be below 200.]]>
+        <![CDATA[Stacktrace: AssertionError: expected 401 to be below 200
+   at Object.eval sandbox-script.js:3:36).]]>
+      </failure>
+    </testcase>
+  </testsuite>
+  <testsuite name="Marketing / Email Campaigns / Create an email campaign Copy" id="30829573-b35c-40ce-bded-86e16a28d49e" timestamp="2023-12-01T10:31:53.911Z" tests="0" failures="0" errors="1" time="0.221">
+    <system-err><![CDATA[Iteration: 0
+
+---
+testScriptError: No data, empty input at 1:1
+
+^
+---
+]]></system-err>
+  </testsuite>
+  <testsuite name="Marketing / Email Campaigns / Send an email campaign immediately, based on campaignId" id="fc4465fa-857d-410e-b616-b5bed94a2a74" timestamp="2023-12-01T10:31:53.911Z" tests="0" failures="0" errors="0" time="0.200"/>
+  <testsuite name="Marketing / Email Campaigns / Send an email campaign to your test list" id="c268f9f4-d64b-436c-950f-77f87983f437" timestamp="2023-12-01T10:31:53.911Z" tests="0" failures="0" errors="0" time="0.224"/>
+  <testsuite name="Marketing / Email Campaigns / Update an email campaign status" id="f32a1ce3-9dfb-4e7e-a0f3-a5b8f8880819" timestamp="2023-12-01T10:31:53.911Z" tests="0" failures="0" errors="0" time="0.193"/>
+  <testsuite name="Marketing / Email Campaigns / Send the report of a campaign" id="69c1abf2-a1b2-4907-8fef-f815ad069323" timestamp="2023-12-01T10:31:53.911Z" tests="5" failures="4" errors="0" time="0.233">
+    <testcase name="Response status code is 200" time="0.233" classname="Brevo">
+      <failure type="AssertionFailure" message="expected response to have status code 200 but got 429">
+        <![CDATA[Failed 1 times.]]>
+        <![CDATA[Collection JSON ID: c432a5c9-86c9-4812-b55e-6e55a25a70ea.]]>
+        <![CDATA[Collection name: Brevo.]]>
+        <![CDATA[Request name: Marketing / Email Campaigns / Send the report of a campaign.]]>
+        <![CDATA[Test description: Response status code is 200.]]>
+        <![CDATA[Error message: expected response to have status code 200 but got 429.]]>
+        <![CDATA[Stacktrace: AssertionError: expected response to have status code 200 but got 429
+   at Object.eval sandbox-script.js:1:41).]]>
+      </failure>
+    </testcase>
+    <testcase name="Response body is an empty object" time="0.233" classname="Brevo">
+      <failure type="AssertionFailure" message="No data, empty input at 1:1&#xA;&#xA;^">
+        <![CDATA[Failed 1 times.]]>
+        <![CDATA[Collection JSON ID: c432a5c9-86c9-4812-b55e-6e55a25a70ea.]]>
+        <![CDATA[Collection name: Brevo.]]>
+        <![CDATA[Request name: Marketing / Email Campaigns / Send the report of a campaign.]]>
+        <![CDATA[Test description: Response body is an empty object.]]>
+        <![CDATA[Error message: No data, empty input at 1:1
+
+^.]]>
+        <![CDATA[Stacktrace: JSONError: No data, empty input at 1:1
+
+^
+   at Object.eval sandbox-script.js:2:41).]]>
+      </failure>
+    </testcase>
+    <testcase name="Verify that the response does not contain any sensitive information" time="0.233" classname="Brevo">
+      <failure type="AssertionFailure" message="No data, empty input at 1:1&#xA;&#xA;^">
+        <![CDATA[Failed 1 times.]]>
+        <![CDATA[Collection JSON ID: c432a5c9-86c9-4812-b55e-6e55a25a70ea.]]>
+        <![CDATA[Collection name: Brevo.]]>
+        <![CDATA[Request name: Marketing / Email Campaigns / Send the report of a campaign.]]>
+        <![CDATA[Test description: Verify that the response does not contain any sensitive information.]]>
+        <![CDATA[Error message: No data, empty input at 1:1
+
+^.]]>
+        <![CDATA[Stacktrace: JSONError: No data, empty input at 1:1
+
+^
+   at Object.eval sandbox-script.js:3:41).]]>
+      </failure>
+    </testcase>
+    <testcase name="Request duration is within an acceptable range" time="0.233" classname="Brevo"/>
+    <testcase name="No errors or warnings in the response" time="0.233" classname="Brevo">
+      <failure type="AssertionFailure" message="No data, empty input at 1:1&#xA;&#xA;^">
+        <![CDATA[Failed 1 times.]]>
+        <![CDATA[Collection JSON ID: c432a5c9-86c9-4812-b55e-6e55a25a70ea.]]>
+        <![CDATA[Collection name: Brevo.]]>
+        <![CDATA[Request name: Marketing / Email Campaigns / Send the report of a campaign.]]>
+        <![CDATA[Test description: No errors or warnings in the response.]]>
+        <![CDATA[Error message: No data, empty input at 1:1
+
+^.]]>
+        <![CDATA[Stacktrace: JSONError: No data, empty input at 1:1
+
+^
+   at Object.eval sandbox-script.js:5:41).]]>
+      </failure>
+    </testcase>
+  </testsuite>
+  <testsuite name="Marketing / Email Campaigns / Get an A/B test email campaign results" id="fb013b9b-e91d-4519-8b96-550b0d74402a" timestamp="2023-12-01T10:31:53.911Z" tests="1" failures="0" errors="0" time="0.197">
+    <testcase name="Response time is less than 500ms" time="0.197" classname="Brevo"/>
+  </testsuite>
+  <testsuite name="Marketing / Email Campaigns / Get a shared template url" id="f00b48bf-cc4d-4696-8cca-4c8d5689aaa8" timestamp="2023-12-01T10:31:53.911Z" tests="6" failures="6" errors="0" time="0.211">
+    <testcase name="Response status code is 200" time="0.211" classname="Brevo">
+      <failure type="AssertionFailure" message="expected response to have status code 200 but got 429">
+        <![CDATA[Failed 1 times.]]>
+        <![CDATA[Collection JSON ID: c432a5c9-86c9-4812-b55e-6e55a25a70ea.]]>
+        <![CDATA[Collection name: Brevo.]]>
+        <![CDATA[Request name: Marketing / Email Campaigns / Get a shared template url.]]>
+        <![CDATA[Test description: Response status code is 200.]]>
+        <![CDATA[Error message: expected response to have status code 200 but got 429.]]>
+        <![CDATA[Stacktrace: AssertionError: expected response to have status code 200 but got 429
+   at Object.eval sandbox-script.js:1:43).]]>
+      </failure>
+    </testcase>
+    <testcase name="Response has the required field 'sharedUrl'" time="0.211" classname="Brevo">
+      <failure type="AssertionFailure" message="No data, empty input at 1:1&#xA;&#xA;^">
+        <![CDATA[Failed 1 times.]]>
+        <![CDATA[Collection JSON ID: c432a5c9-86c9-4812-b55e-6e55a25a70ea.]]>
+        <![CDATA[Collection name: Brevo.]]>
+        <![CDATA[Request name: Marketing / Email Campaigns / Get a shared template url.]]>
+        <![CDATA[Test description: Response has the required field 'sharedUrl'.]]>
+        <![CDATA[Error message: No data, empty input at 1:1
+
+^.]]>
+        <![CDATA[Stacktrace: JSONError: No data, empty input at 1:1
+
+^
+   at Object.eval sandbox-script.js:2:43).]]>
+      </failure>
+    </testcase>
+    <testcase name="Shared URL is in valid URL format" time="0.211" classname="Brevo">
+      <failure type="AssertionFailure" message="No data, empty input at 1:1&#xA;&#xA;^">
+        <![CDATA[Failed 1 times.]]>
+        <![CDATA[Collection JSON ID: c432a5c9-86c9-4812-b55e-6e55a25a70ea.]]>
+        <![CDATA[Collection name: Brevo.]]>
+        <![CDATA[Request name: Marketing / Email Campaigns / Get a shared template url.]]>
+        <![CDATA[Test description: Shared URL is in valid URL format.]]>
+        <![CDATA[Error message: No data, empty input at 1:1
+
+^.]]>
+        <![CDATA[Stacktrace: JSONError: No data, empty input at 1:1
+
+^
+   at Object.eval sandbox-script.js:3:43).]]>
+      </failure>
+    </testcase>
+    <testcase name="Shared URL should not be empty" time="0.211" classname="Brevo">
+      <failure type="AssertionFailure" message="No data, empty input at 1:1&#xA;&#xA;^">
+        <![CDATA[Failed 1 times.]]>
+        <![CDATA[Collection JSON ID: c432a5c9-86c9-4812-b55e-6e55a25a70ea.]]>
+        <![CDATA[Collection name: Brevo.]]>
+        <![CDATA[Request name: Marketing / Email Campaigns / Get a shared template url.]]>
+        <![CDATA[Test description: Shared URL should not be empty.]]>
+        <![CDATA[Error message: No data, empty input at 1:1
+
+^.]]>
+        <![CDATA[Stacktrace: JSONError: No data, empty input at 1:1
+
+^
+   at Object.eval sandbox-script.js:4:43).]]>
+      </failure>
+    </testcase>
+    <testcase name="Shared URL is a unique and valid URL" time="0.211" classname="Brevo">
+      <failure type="AssertionFailure" message="No data, empty input at 1:1&#xA;&#xA;^">
+        <![CDATA[Failed 1 times.]]>
+        <![CDATA[Collection JSON ID: c432a5c9-86c9-4812-b55e-6e55a25a70ea.]]>
+        <![CDATA[Collection name: Brevo.]]>
+        <![CDATA[Request name: Marketing / Email Campaigns / Get a shared template url.]]>
+        <![CDATA[Test description: Shared URL is a unique and valid URL.]]>
+        <![CDATA[Error message: No data, empty input at 1:1
+
+^.]]>
+        <![CDATA[Stacktrace: JSONError: No data, empty input at 1:1
+
+^
+   at Object.eval sandbox-script.js:5:43).]]>
+      </failure>
+    </testcase>
+    <testcase name="Schema is valid" time="0.211" classname="Brevo">
+      <failure type="AssertionFailure" message="No data, empty input at 1:1&#xA;&#xA;^">
+        <![CDATA[Failed 1 times.]]>
+        <![CDATA[Collection JSON ID: c432a5c9-86c9-4812-b55e-6e55a25a70ea.]]>
+        <![CDATA[Collection name: Brevo.]]>
+        <![CDATA[Request name: Marketing / Email Campaigns / Get a shared template url.]]>
+        <![CDATA[Test description: Schema is valid.]]>
+        <![CDATA[Error message: No data, empty input at 1:1
+
+^.]]>
+        <![CDATA[Stacktrace: JSONError: No data, empty input at 1:1
+
+^
+   at Object.eval sandbox-script.js:6:43).]]>
+      </failure>
+    </testcase>
+  </testsuite>
+  <testsuite name="Marketing / Email Campaigns / Export the recipients of an email campaign" id="99b0638a-aca9-434a-8afc-2a57e11a8a8a" timestamp="2023-12-01T10:31:53.911Z" tests="3" failures="2" errors="0" time="0.251">
+    <testcase name="Response status code is 200" time="0.251" classname="Brevo">
+      <failure type="AssertionFailure" message="expected response to have status code 200 but got 429">
+        <![CDATA[Failed 1 times.]]>
+        <![CDATA[Collection JSON ID: c432a5c9-86c9-4812-b55e-6e55a25a70ea.]]>
+        <![CDATA[Collection name: Brevo.]]>
+        <![CDATA[Request name: Marketing / Email Campaigns / Export the recipients of an email campaign.]]>
+        <![CDATA[Test description: Response status code is 200.]]>
+        <![CDATA[Error message: expected response to have status code 200 but got 429.]]>
+        <![CDATA[Stacktrace: AssertionError: expected response to have status code 200 but got 429
+   at Object.eval sandbox-script.js:1:44).]]>
+      </failure>
+    </testcase>
+    <testcase name="Content-Type is present" time="0.251" classname="Brevo">
+      <failure type="AssertionFailure" message="expected response to have header with key 'Content-Type'">
+        <![CDATA[Failed 1 times.]]>
+        <![CDATA[Collection JSON ID: c432a5c9-86c9-4812-b55e-6e55a25a70ea.]]>
+        <![CDATA[Collection name: Brevo.]]>
+        <![CDATA[Request name: Marketing / Email Campaigns / Export the recipients of an email campaign.]]>
+        <![CDATA[Test description: Content-Type is present.]]>
+        <![CDATA[Error message: expected response to have header with key 'Content-Type'.]]>
+        <![CDATA[Stacktrace: AssertionError: expected response to have header with key 'Content-Type'
+   at Object.eval sandbox-script.js:2:44).]]>
+      </failure>
+    </testcase>
+    <testcase name="Response time is less than 900ms" time="0.251" classname="Brevo"/>
+  </testsuite>
+  <testsuite name="Marketing / Email Campaigns / Return all your created email campaigns" id="55d41387-8691-44c5-9c09-a8f449c200d9" timestamp="2023-12-01T10:31:53.911Z" tests="0" failures="0" errors="0" time="0.228"/>
+  <testsuite name="Marketing / Email Campaigns / Upload an image to your account's image gallery" id="fc35b923-aedd-476b-b1a9-64c27709b1ca" timestamp="2023-12-01T10:31:53.911Z" tests="0" failures="0" errors="0" time="0.335"/>
+  <testsuite name="Marketing / SMS Campaigns / Returns the information for all your created SMS campaigns" id="ff4f5e6b-49c6-4089-ac41-3defc4fa2e22" timestamp="2023-12-01T10:31:53.911Z" tests="0" failures="0" errors="0" time="0.250"/>
+  <testsuite name="Marketing / SMS Campaigns / Creates an SMS campaign" id="e23bdd27-55fc-417b-9d5a-372ebe46feaa" timestamp="2023-12-01T10:31:53.911Z" tests="0" failures="0" errors="0" time="0.269"/>
+  <testsuite name="Marketing / SMS Campaigns / Get an SMS campaign" id="ed0dbc50-93a1-4c31-8075-4d37ca52e7df" timestamp="2023-12-01T10:31:53.911Z" tests="0" failures="0" errors="0" time="0.260"/>
+  <testsuite name="Marketing / SMS Campaigns / Update an SMS campaign" id="fc663772-2e54-45e9-8ed7-7e174264ea30" timestamp="2023-12-01T10:31:53.911Z" tests="0" failures="0" errors="0" time="0.257"/>
+  <testsuite name="Marketing / SMS Campaigns / Delete an SMS campaign" id="13b00b7b-ba30-41f5-a7c6-6851a63f0cd0" timestamp="2023-12-01T10:31:53.911Z" tests="0" failures="0" errors="0" time="0.352"/>
+  <testsuite name="Marketing / SMS Campaigns / Send your SMS campaign immediately" id="7f285c5e-f9ba-44a7-9c50-3b37d73f481d" timestamp="2023-12-01T10:31:53.911Z" tests="0" failures="0" errors="0" time="0.241"/>
+  <testsuite name="Marketing / SMS Campaigns / Update a campaign's status" id="afda2388-ea30-427b-acde-110799c6730e" timestamp="2023-12-01T10:31:53.911Z" tests="0" failures="0" errors="0" time="0.270"/>
+  <testsuite name="Marketing / SMS Campaigns / Send a test SMS campaign" id="c6bdc086-a2fa-46b6-8943-395fced5e8d2" timestamp="2023-12-01T10:31:53.911Z" tests="0" failures="0" errors="0" time="0.353"/>
+  <testsuite name="Marketing / SMS Campaigns / Export an SMS campaign's recipients" id="143ffcee-bfad-46e4-82a4-abfb6bd3c306" timestamp="2023-12-01T10:31:53.911Z" tests="0" failures="0" errors="0" time="0.325"/>
+  <testsuite name="Marketing / SMS Campaigns / Send an SMS campaign's report" id="66f1244d-708e-4bfb-acf1-6605d3103849" timestamp="2023-12-01T10:31:53.911Z" tests="0" failures="0" errors="0" time="0.303"/>
+  <testsuite name="Marketing / WhatsApp Campaigns / Get a WhatsApp campaign" id="dde7d934-08cb-4817-ae96-5acbdac36bb2" timestamp="2023-12-01T10:31:53.911Z" tests="0" failures="0" errors="0" time="0.322"/>
+  <testsuite name="Marketing / WhatsApp Campaigns / Delete a WhatsApp campaign" id="bcc2c5a7-9598-4855-ab86-2b2f6c3dc7cb" timestamp="2023-12-01T10:31:53.911Z" tests="0" failures="0" errors="0" time="0.283"/>
+  <testsuite name="Marketing / WhatsApp Campaigns / Return all your created WhatsApp campaigns" id="9bc2ac7c-61c9-46c8-b5e1-982c7ebd4201" timestamp="2023-12-01T10:31:53.911Z" tests="0" failures="0" errors="0" time="0.330"/>
+  <testsuite name="Marketing / WhatsApp Campaigns / Return all your created WhatsApp templates" id="afa8a14f-4a25-49bf-957f-82fe989a7979" timestamp="2023-12-01T10:31:53.911Z" tests="0" failures="0" errors="0" time="0.317"/>
+  <testsuite name="Marketing / WhatsApp Campaigns / Update a WhatsApp campaign" id="ed25d93e-89c5-4f7c-875f-9044e7a29af9" timestamp="2023-12-01T10:31:53.911Z" tests="0" failures="0" errors="0" time="0.353"/>
+  <testsuite name="Marketing / WhatsApp Campaigns / Create and send a WhatsApp campaign" id="0ae76fb4-70b5-46eb-940d-99796baf6d5f" timestamp="2023-12-01T10:31:53.911Z" tests="0" failures="0" errors="0" time="0.264"/>
+  <testsuite name="Marketing / WhatsApp Campaigns / Create a WhatsApp template" id="55bb163c-e2a9-4737-92ed-44be51633085" timestamp="2023-12-01T10:31:53.911Z" tests="0" failures="0" errors="0" time="0.260"/>
+  <testsuite name="Marketing / WhatsApp Campaigns / Send your WhatsApp template for approval" id="01b32975-581c-4161-b6cc-b9d15ddf2420" timestamp="2023-12-01T10:31:53.911Z" tests="0" failures="0" errors="0" time="0.267"/>
+  <testsuite name="Marketing / WhatsApp Campaigns / Get your WhatsApp API account information" id="d8e224df-7b76-4d4a-aa11-56aaeb6861bd" timestamp="2023-12-01T10:31:53.911Z" tests="0" failures="0" errors="0" time="0.259"/>
+  <testsuite name="Contact management / Contacts / Get all the contacts" id="0c50d3fa-223e-48d3-9038-01cacbecddb1" timestamp="2023-12-01T10:31:53.911Z" tests="5" failures="0" errors="0" time="14.217">
+    <testcase name="Response status code is 200" time="14.217" classname="Brevo"/>
+    <testcase name="Contacts array is present and contains at least one element" time="14.217" classname="Brevo"/>
+    <testcase name="Each contact has a valid email format" time="14.217" classname="Brevo"/>
+    <testcase name="Count matches the number of elements in the contacts array" time="14.217" classname="Brevo"/>
+    <testcase name="Response has a valid content type" time="14.217" classname="Brevo"/>
+  </testsuite>
+  <testsuite name="Contact management / Contacts / Create a contact" id="85ad1d16-4d8e-4bb6-8415-de018ebabe85" timestamp="2023-12-01T10:31:53.911Z" tests="7" failures="1" errors="0" time="0.345">
+    <testcase name="Verify response code is 201" time="0.345" classname="Brevo"/>
+    <testcase name="Response is an object with id property" time="0.345" classname="Brevo"/>
+    <testcase name="Id is a non-negative integer" time="0.345" classname="Brevo"/>
+    <testcase name="Response time is less than 200ms" time="0.345" classname="Brevo">
+      <failure type="AssertionFailure" message="expected 345 to be below 200">
+        <![CDATA[Failed 1 times.]]>
+        <![CDATA[Collection JSON ID: c432a5c9-86c9-4812-b55e-6e55a25a70ea.]]>
+        <![CDATA[Collection name: Brevo.]]>
+        <![CDATA[Request name: Contact management / Contacts / Create a contact.]]>
+        <![CDATA[Test description: Response time is less than 200ms.]]>
+        <![CDATA[Error message: expected 345 to be below 200.]]>
+        <![CDATA[Stacktrace: AssertionError: expected 345 to be below 200
+   at Object.eval sandbox-script.js:4:67).]]>
+      </failure>
+    </testcase>
+    <testcase name="No additional properties other than 'id' in the response" time="0.345" classname="Brevo"/>
+    <testcase name="Id is unique for each request" time="0.345" classname="Brevo"/>
+    <testcase name="Response body is not empty" time="0.345" classname="Brevo"/>
+  </testsuite>
+  <testsuite name="Contact management / Contacts / Get email campaigns' statistics for a contact" id="300ebde4-f0f7-4588-923f-eb04dbb5116f" timestamp="2023-12-01T10:31:53.911Z" tests="4" failures="3" errors="0" time="0.296">
+    <testcase name="Response status code is 200" time="0.296" classname="Brevo"/>
+    <testcase name="Response has the required fields" time="0.296" classname="Brevo">
+      <failure type="AssertionFailure" message="expected {} to have property 'from'">
+        <![CDATA[Failed 1 times.]]>
+        <![CDATA[Collection JSON ID: c432a5c9-86c9-4812-b55e-6e55a25a70ea.]]>
+        <![CDATA[Collection name: Brevo.]]>
+        <![CDATA[Request name: Contact management / Contacts / Get email campaigns' statistics for a contact.]]>
+        <![CDATA[Test description: Response has the required fields.]]>
+        <![CDATA[Error message: expected {} to have property 'from'.]]>
+        <![CDATA[Stacktrace: AssertionError: expected {} to have property 'from'
+   at Object.eval sandbox-script.js:2:68).]]>
+      </failure>
+    </testcase>
+    <testcase name="MessagesSent array is present and contains expected number of elements" time="0.296" classname="Brevo">
+      <failure type="AssertionFailure" message="expected undefined to exist">
+        <![CDATA[Failed 1 times.]]>
+        <![CDATA[Collection JSON ID: c432a5c9-86c9-4812-b55e-6e55a25a70ea.]]>
+        <![CDATA[Collection name: Brevo.]]>
+        <![CDATA[Request name: Contact management / Contacts / Get email campaigns' statistics for a contact.]]>
+        <![CDATA[Test description: MessagesSent array is present and contains expected number of elements.]]>
+        <![CDATA[Error message: expected undefined to exist.]]>
+        <![CDATA[Stacktrace: AssertionError: expected undefined to exist
+   at Object.eval sandbox-script.js:3:68).]]>
+      </failure>
+    </testcase>
+    <testcase name="EventTime in messagesSent is in valid date-time format" time="0.296" classname="Brevo">
+      <failure type="AssertionFailure" message="expected undefined to be an array">
+        <![CDATA[Failed 1 times.]]>
+        <![CDATA[Collection JSON ID: c432a5c9-86c9-4812-b55e-6e55a25a70ea.]]>
+        <![CDATA[Collection name: Brevo.]]>
+        <![CDATA[Request name: Contact management / Contacts / Get email campaigns' statistics for a contact.]]>
+        <![CDATA[Test description: EventTime in messagesSent is in valid date-time format.]]>
+        <![CDATA[Error message: expected undefined to be an array.]]>
+        <![CDATA[Stacktrace: AssertionError: expected undefined to be an array
+   at Object.eval sandbox-script.js:4:68).]]>
+      </failure>
+    </testcase>
+  </testsuite>
+  <testsuite name="Contact management / Contacts / Create Contact via DOI (Double-Opt-In) Flow" id="270e1600-9e03-44d9-8c28-601390c21486" timestamp="2023-12-01T10:31:53.911Z" tests="0" failures="0" errors="0" time="0.261"/>
+  <testsuite name="Contact management / Contacts / Update multiple contacts" id="cb5f7688-4345-4811-9f78-df9dda16650b" timestamp="2023-12-01T10:31:53.911Z" tests="0" failures="0" errors="0" time="0.244"/>
+  <testsuite name="Contact management / Contacts / Export contacts" id="432713b0-b276-453f-94c5-288d5451e3f0" timestamp="2023-12-01T10:31:53.911Z" tests="5" failures="4" errors="0" time="0.282">
+    <testcase name="Response status code is 202" time="0.282" classname="Brevo">
+      <failure type="AssertionFailure" message="expected response to have status code 202 but got 200">
+        <![CDATA[Failed 1 times.]]>
+        <![CDATA[Collection JSON ID: c432a5c9-86c9-4812-b55e-6e55a25a70ea.]]>
+        <![CDATA[Collection name: Brevo.]]>
+        <![CDATA[Request name: Contact management / Contacts / Export contacts.]]>
+        <![CDATA[Test description: Response status code is 202.]]>
+        <![CDATA[Error message: expected response to have status code 202 but got 200.]]>
+        <![CDATA[Stacktrace: AssertionError: expected response to have status code 202 but got 200
+   at Object.eval sandbox-script.js:1:71).]]>
+      </failure>
+    </testcase>
+    <testcase name="ProcessId is present in the response" time="0.282" classname="Brevo">
+      <failure type="AssertionFailure" message="expected undefined to exist">
+        <![CDATA[Failed 1 times.]]>
+        <![CDATA[Collection JSON ID: c432a5c9-86c9-4812-b55e-6e55a25a70ea.]]>
+        <![CDATA[Collection name: Brevo.]]>
+        <![CDATA[Request name: Contact management / Contacts / Export contacts.]]>
+        <![CDATA[Test description: ProcessId is present in the response.]]>
+        <![CDATA[Error message: expected undefined to exist.]]>
+        <![CDATA[Stacktrace: AssertionError: expected undefined to exist
+   at Object.eval sandbox-script.js:2:71).]]>
+      </failure>
+    </testcase>
+    <testcase name="ProcessId is a non-negative integer" time="0.282" classname="Brevo">
+      <failure type="AssertionFailure" message="expected undefined to be a number">
+        <![CDATA[Failed 1 times.]]>
+        <![CDATA[Collection JSON ID: c432a5c9-86c9-4812-b55e-6e55a25a70ea.]]>
+        <![CDATA[Collection name: Brevo.]]>
+        <![CDATA[Request name: Contact management / Contacts / Export contacts.]]>
+        <![CDATA[Test description: ProcessId is a non-negative integer.]]>
+        <![CDATA[Error message: expected undefined to be a number.]]>
+        <![CDATA[Stacktrace: AssertionError: expected undefined to be a number
+   at Object.eval sandbox-script.js:3:71).]]>
+      </failure>
+    </testcase>
+    <testcase name="ProcessId should be a number" time="0.282" classname="Brevo">
+      <failure type="AssertionFailure" message="expected undefined to be a number">
+        <![CDATA[Failed 1 times.]]>
+        <![CDATA[Collection JSON ID: c432a5c9-86c9-4812-b55e-6e55a25a70ea.]]>
+        <![CDATA[Collection name: Brevo.]]>
+        <![CDATA[Request name: Contact management / Contacts / Export contacts.]]>
+        <![CDATA[Test description: ProcessId should be a number.]]>
+        <![CDATA[Error message: expected undefined to be a number.]]>
+        <![CDATA[Stacktrace: AssertionError: expected undefined to be a number
+   at Object.eval sandbox-script.js:4:71).]]>
+      </failure>
+    </testcase>
+    <testcase name="Response time is less than 300ms" time="0.282" classname="Brevo"/>
+  </testsuite>
+  <testsuite name="Contact management / Contacts / Get all folders" id="b91f1e38-4812-4055-9940-0dc593f01d85" timestamp="2023-12-01T10:31:53.911Z" tests="5" failures="0" errors="0" time="0.610">
+    <testcase name="Status code is 200" time="0.610" classname="Brevo"/>
+    <testcase name="Response includes folders array" time="0.610" classname="Brevo"/>
+    <testcase name="Each folder has an id, name, totalBlacklisted, totalSubscribers, and uniqueSubscribers" time="0.610" classname="Brevo"/>
+    <testcase name="Response includes count property" time="0.610" classname="Brevo"/>
+    <testcase name="Response time is less than 1000ms" time="0.610" classname="Brevo"/>
+  </testsuite>
+  <testsuite name="Contact management / Contacts / Import contacts" id="ad3c5a1a-5225-4b6c-ba18-39d52fe3f15f" timestamp="2023-12-01T10:31:53.911Z" tests="5" failures="5" errors="0" time="0.316">
+    <testcase name="Response status code is 202" time="0.316" classname="Brevo">
+      <failure type="AssertionFailure" message="expected 404 to equal 202">
+        <![CDATA[Failed 1 times.]]>
+        <![CDATA[Collection JSON ID: c432a5c9-86c9-4812-b55e-6e55a25a70ea.]]>
+        <![CDATA[Collection name: Brevo.]]>
+        <![CDATA[Request name: Contact management / Contacts / Import contacts.]]>
+        <![CDATA[Test description: Response status code is 202.]]>
+        <![CDATA[Error message: expected 404 to equal 202.]]>
+        <![CDATA[Stacktrace: AssertionError: expected 404 to equal 202
+   at Object.eval sandbox-script.js:1:73).]]>
+      </failure>
+    </testcase>
+    <testcase name="ProcessId is present in the response" time="0.316" classname="Brevo">
+      <failure type="AssertionFailure" message="expected { code: 'document_not_found', …(1) } to have property 'processId'">
+        <![CDATA[Failed 1 times.]]>
+        <![CDATA[Collection JSON ID: c432a5c9-86c9-4812-b55e-6e55a25a70ea.]]>
+        <![CDATA[Collection name: Brevo.]]>
+        <![CDATA[Request name: Contact management / Contacts / Import contacts.]]>
+        <![CDATA[Test description: ProcessId is present in the response.]]>
+        <![CDATA[Error message: expected { code: 'document_not_found', …(1) } to have property 'processId'.]]>
+        <![CDATA[Stacktrace: AssertionError: expected { code: 'document_not_found', …(1) } to have property 'processId'
+   at Object.eval sandbox-script.js:2:73).]]>
+      </failure>
+    </testcase>
+    <testcase name="ProcessId is a non-negative integer" time="0.316" classname="Brevo">
+      <failure type="AssertionFailure" message="expected undefined to be a number">
+        <![CDATA[Failed 1 times.]]>
+        <![CDATA[Collection JSON ID: c432a5c9-86c9-4812-b55e-6e55a25a70ea.]]>
+        <![CDATA[Collection name: Brevo.]]>
+        <![CDATA[Request name: Contact management / Contacts / Import contacts.]]>
+        <![CDATA[Test description: ProcessId is a non-negative integer.]]>
+        <![CDATA[Error message: expected undefined to be a number.]]>
+        <![CDATA[Stacktrace: AssertionError: expected undefined to be a number
+   at Object.eval sandbox-script.js:3:73).]]>
+      </failure>
+    </testcase>
+    <testcase name="Verify processId remains the same for subsequent executions" time="0.316" classname="Brevo">
+      <failure type="AssertionFailure" message="expected undefined to equal 78">
+        <![CDATA[Failed 1 times.]]>
+        <![CDATA[Collection JSON ID: c432a5c9-86c9-4812-b55e-6e55a25a70ea.]]>
+        <![CDATA[Collection name: Brevo.]]>
+        <![CDATA[Request name: Contact management / Contacts / Import contacts.]]>
+        <![CDATA[Test description: Verify processId remains the same for subsequent executions.]]>
+        <![CDATA[Error message: expected undefined to equal 78.]]>
+        <![CDATA[Stacktrace: AssertionError: expected undefined to equal 78
+   at Object.eval sandbox-script.js:4:73).]]>
+      </failure>
+    </testcase>
+    <testcase name="Response time is within an acceptable range" time="0.316" classname="Brevo">
+      <failure type="AssertionFailure" message="expected 316 to be below 300">
+        <![CDATA[Failed 1 times.]]>
+        <![CDATA[Collection JSON ID: c432a5c9-86c9-4812-b55e-6e55a25a70ea.]]>
+        <![CDATA[Collection name: Brevo.]]>
+        <![CDATA[Request name: Contact management / Contacts / Import contacts.]]>
+        <![CDATA[Test description: Response time is within an acceptable range.]]>
+        <![CDATA[Error message: expected 316 to be below 300.]]>
+        <![CDATA[Stacktrace: AssertionError: expected 316 to be below 300
+   at Object.eval sandbox-script.js:5:73).]]>
+      </failure>
+    </testcase>
+  </testsuite>
+  <testsuite name="Contact management / Contacts / Get a contact's details" id="0ef6eff0-1e23-49a5-93f6-703ced22e0f8" timestamp="2023-12-01T10:31:53.911Z" tests="7" failures="0" errors="0" time="0.367">
+    <testcase name="Response status code is 200" time="0.367" classname="Brevo"/>
+    <testcase name="Verify the id parsed is what's returned in the response" time="0.367" classname="Brevo"/>
+    <testcase name="Response time is less than 500ms" time="0.367" classname="Brevo"/>
+    <testcase name="Response has a valid content type" time="0.367" classname="Brevo"/>
+    <testcase name="Verify email blacklisted is false" time="0.367" classname="Brevo"/>
+    <testcase name="Verify createdAt is not empty" time="0.367" classname="Brevo"/>
+    <testcase name="Verify modifiedAt is not empty" time="0.367" classname="Brevo"/>
+  </testsuite>
+  <testsuite name="Contact management / Contacts / Update a contact" id="dd36b7ea-dccf-43a2-b8b9-c86c953d9b61" timestamp="2023-12-01T10:31:53.911Z" tests="3" failures="0" errors="0" time="0.467">
+    <testcase name="Status code is 204" time="0.467" classname="Brevo"/>
+    <testcase name="Verify Date is present in the response header" time="0.467" classname="Brevo"/>
+    <testcase name="Response time is less than 500ms" time="0.467" classname="Brevo"/>
+  </testsuite>
+  <testsuite name="Contact management / Contacts / Delete a contact" id="c8be204c-24ae-4e75-832a-cb8690cb7094" timestamp="2023-12-01T10:31:53.911Z" tests="3" failures="0" errors="0" time="0.338">
+    <testcase name="Status code is 204" time="0.338" classname="Brevo"/>
+    <testcase name="Verify Date is present in the response header" time="0.338" classname="Brevo"/>
+    <testcase name="Response time is less than 500ms" time="0.338" classname="Brevo"/>
+  </testsuite>
+  <testsuite name="Contact management / Lists / Get all folders" id="f15548dc-aaee-4c28-8119-f83de6d84365" timestamp="2023-12-01T10:31:53.911Z" tests="6" failures="0" errors="0" time="0.319">
+    <testcase name="Status code is 200" time="0.319" classname="Brevo"/>
+    <testcase name="Response includes folders array" time="0.319" classname="Brevo"/>
+    <testcase name="Each folder has an id, name, totalBlacklisted, totalSubscribers, and uniqueSubscribers" time="0.319" classname="Brevo"/>
+    <testcase name="Response includes count property" time="0.319" classname="Brevo"/>
+    <testcase name="Response time is less than 1000ms" time="0.319" classname="Brevo"/>
+    <testcase name="Id is unique for each response" time="0.319" classname="Brevo"/>
+  </testsuite>
+  <testsuite name="Contact management / Lists / Create a list" id="d7ebd920-f490-4b5c-807c-cc66e7f39314" timestamp="2023-12-01T10:31:53.911Z" tests="4" failures="0" errors="0" time="0.414">
+    <testcase name="Status code is 201" time="0.414" classname="Brevo"/>
+    <testcase name="Response has the required field 'id'" time="0.414" classname="Brevo"/>
+    <testcase name="Id is a non-negative integer" time="0.414" classname="Brevo"/>
+    <testcase name="Response time is less than 500ms" time="0.414" classname="Brevo"/>
+  </testsuite>
+  <testsuite name="Contact management / Lists / Get all the lists" id="9e1196ae-2378-4c9f-b83e-a1308b732f33" timestamp="2023-12-01T10:31:53.911Z" tests="6" failures="0" errors="0" time="0.345">
+    <testcase name="Status code is 200" time="0.345" classname="Brevo"/>
+    <testcase name="Response includes lists array" time="0.345" classname="Brevo"/>
+    <testcase name="Each List has an id, name, totalBlacklisted, totalSubscribers, and uniqueSubscribers" time="0.345" classname="Brevo"/>
+    <testcase name="Response includes count property" time="0.345" classname="Brevo"/>
+    <testcase name="Response time is less than 1000ms" time="0.345" classname="Brevo"/>
+    <testcase name="Id is unique for each response" time="0.345" classname="Brevo"/>
+  </testsuite>
+  <testsuite name="Contact management / Lists / Get contacts in a list" id="eb3273e5-826a-4f89-af8c-80512431e0b4" timestamp="2023-12-01T10:31:53.911Z" tests="5" failures="3" errors="0" time="0.418">
+    <testcase name="Response status code is 200" time="0.418" classname="Brevo"/>
+    <testcase name="Email format is valid for each contact" time="0.418" classname="Brevo"/>
+    <testcase name="Contacts array is present and has the expected number of elements" time="0.418" classname="Brevo">
+      <failure type="AssertionFailure" message="expected [] to have a length at least 1 but got +0">
+        <![CDATA[Failed 1 times.]]>
+        <![CDATA[Collection JSON ID: c432a5c9-86c9-4812-b55e-6e55a25a70ea.]]>
+        <![CDATA[Collection name: Brevo.]]>
+        <![CDATA[Request name: Contact management / Lists / Get contacts in a list.]]>
+        <![CDATA[Test description: Contacts array is present and has the expected number of elements.]]>
+        <![CDATA[Error message: expected [] to have a length at least 1 but got +0.]]>
+        <![CDATA[Stacktrace: AssertionError: expected [] to have a length at least 1 but got +0
+   at Object.eval sandbox-script.js:3:80).]]>
+      </failure>
+    </testcase>
+    <testcase name="Attributes presence in contacts" time="0.418" classname="Brevo">
+      <failure type="AssertionFailure" message="expected [] not to be empty">
+        <![CDATA[Failed 1 times.]]>
+        <![CDATA[Collection JSON ID: c432a5c9-86c9-4812-b55e-6e55a25a70ea.]]>
+        <![CDATA[Collection name: Brevo.]]>
+        <![CDATA[Request name: Contact management / Lists / Get contacts in a list.]]>
+        <![CDATA[Test description: Attributes presence in contacts.]]>
+        <![CDATA[Error message: expected [] not to be empty.]]>
+        <![CDATA[Stacktrace: AssertionError: expected [] not to be empty
+   at Object.eval sandbox-script.js:4:80).]]>
+      </failure>
+    </testcase>
+    <testcase name="verify contact email is same as sender's email" time="0.418" classname="Brevo">
+      <failure type="AssertionFailure" message="contact is not defined">
+        <![CDATA[Failed 1 times.]]>
+        <![CDATA[Collection JSON ID: c432a5c9-86c9-4812-b55e-6e55a25a70ea.]]>
+        <![CDATA[Collection name: Brevo.]]>
+        <![CDATA[Request name: Contact management / Lists / Get contacts in a list.]]>
+        <![CDATA[Test description: verify contact email is same as sender's email.]]>
+        <![CDATA[Error message: contact is not defined.]]>
+        <![CDATA[Stacktrace: ReferenceError: contact is not defined
+   at Object.eval sandbox-script.js:5:80).]]>
+      </failure>
+    </testcase>
+  </testsuite>
+  <testsuite name="Contact management / Lists / Get all the contacts" id="4af4abaa-d415-43a6-a5ed-5a4842d847c4" timestamp="2023-12-01T10:31:53.911Z" tests="5" failures="0" errors="0" time="0.243">
+    <testcase name="Response status code is 200" time="0.243" classname="Brevo"/>
+    <testcase name="Contacts array is present and contains at least one element" time="0.243" classname="Brevo"/>
+    <testcase name="Each contact has a valid email format" time="0.243" classname="Brevo"/>
+    <testcase name="Count matches the number of elements in the contacts array" time="0.243" classname="Brevo"/>
+    <testcase name="Response has a valid content type" time="0.243" classname="Brevo"/>
+  </testsuite>
+  <testsuite name="Contact management / Lists / Add existing contacts to a list" id="cf46d4a2-4f86-42da-b2a4-d38698a5fad2" timestamp="2023-12-01T10:31:53.911Z" tests="4" failures="4" errors="0" time="0.367">
+    <testcase name="Response status code is 201" time="0.367" classname="Brevo">
+      <failure type="AssertionFailure" message="expected response to have status code 201 but got 400">
+        <![CDATA[Failed 1 times.]]>
+        <![CDATA[Collection JSON ID: c432a5c9-86c9-4812-b55e-6e55a25a70ea.]]>
+        <![CDATA[Collection name: Brevo.]]>
+        <![CDATA[Request name: Contact management / Lists / Add existing contacts to a list.]]>
+        <![CDATA[Test description: Response status code is 201.]]>
+        <![CDATA[Error message: expected response to have status code 201 but got 400.]]>
+        <![CDATA[Stacktrace: AssertionError: expected response to have status code 201 but got 400
+   at Object.eval sandbox-script.js:1:82).]]>
+      </failure>
+    </testcase>
+    <testcase name="Success array contains the expected email addresses" time="0.367" classname="Brevo">
+      <failure type="AssertionFailure" message="Cannot read properties of undefined (reading 'success')">
+        <![CDATA[Failed 1 times.]]>
+        <![CDATA[Collection JSON ID: c432a5c9-86c9-4812-b55e-6e55a25a70ea.]]>
+        <![CDATA[Collection name: Brevo.]]>
+        <![CDATA[Request name: Contact management / Lists / Add existing contacts to a list.]]>
+        <![CDATA[Test description: Success array contains the expected email addresses.]]>
+        <![CDATA[Error message: Cannot read properties of undefined (reading 'success').]]>
+        <![CDATA[Stacktrace: TypeError: Cannot read properties of undefined (reading 'success')
+   at Object.eval sandbox-script.js:2:82).]]>
+      </failure>
+    </testcase>
+    <testcase name="Response contains both 'success' and 'failure' arrays" time="0.367" classname="Brevo">
+      <failure type="AssertionFailure" message="Cannot read properties of undefined (reading 'success')">
+        <![CDATA[Failed 1 times.]]>
+        <![CDATA[Collection JSON ID: c432a5c9-86c9-4812-b55e-6e55a25a70ea.]]>
+        <![CDATA[Collection name: Brevo.]]>
+        <![CDATA[Request name: Contact management / Lists / Add existing contacts to a list.]]>
+        <![CDATA[Test description: Response contains both 'success' and 'failure' arrays.]]>
+        <![CDATA[Error message: Cannot read properties of undefined (reading 'success').]]>
+        <![CDATA[Stacktrace: TypeError: Cannot read properties of undefined (reading 'success')
+   at Object.eval sandbox-script.js:3:82).]]>
+      </failure>
+    </testcase>
+    <testcase name="Ensure that the email addresses in the response are in a valid format" time="0.367" classname="Brevo">
+      <failure type="AssertionFailure" message="Cannot read properties of undefined (reading 'success')">
+        <![CDATA[Failed 1 times.]]>
+        <![CDATA[Collection JSON ID: c432a5c9-86c9-4812-b55e-6e55a25a70ea.]]>
+        <![CDATA[Collection name: Brevo.]]>
+        <![CDATA[Request name: Contact management / Lists / Add existing contacts to a list.]]>
+        <![CDATA[Test description: Ensure that the email addresses in the response are in a valid format.]]>
+        <![CDATA[Error message: Cannot read properties of undefined (reading 'success').]]>
+        <![CDATA[Stacktrace: TypeError: Cannot read properties of undefined (reading 'success')
+   at Object.eval sandbox-script.js:4:82).]]>
+      </failure>
+    </testcase>
+  </testsuite>
+  <testsuite name="Contact management / Lists / Delete a contact from a list" id="8c0974c5-edc5-4a1a-a425-8cae133f7a7a" timestamp="2023-12-01T10:31:53.911Z" tests="4" failures="4" errors="0" time="0.346">
+    <testcase name="Verify response code is 201" time="0.346" classname="Brevo">
+      <failure type="AssertionFailure" message="expected 400 to deeply equal 201">
+        <![CDATA[Failed 1 times.]]>
+        <![CDATA[Collection JSON ID: c432a5c9-86c9-4812-b55e-6e55a25a70ea.]]>
+        <![CDATA[Collection name: Brevo.]]>
+        <![CDATA[Request name: Contact management / Lists / Delete a contact from a list.]]>
+        <![CDATA[Test description: Verify response code is 201.]]>
+        <![CDATA[Error message: expected 400 to deeply equal 201.]]>
+        <![CDATA[Stacktrace: AssertionError: expected 400 to deeply equal 201
+   at Object.eval sandbox-script.js:1:83).]]>
+      </failure>
+    </testcase>
+    <testcase name="Success array contains the expected email addresses" time="0.346" classname="Brevo">
+      <failure type="AssertionFailure" message="Cannot read properties of undefined (reading 'success')">
+        <![CDATA[Failed 1 times.]]>
+        <![CDATA[Collection JSON ID: c432a5c9-86c9-4812-b55e-6e55a25a70ea.]]>
+        <![CDATA[Collection name: Brevo.]]>
+        <![CDATA[Request name: Contact management / Lists / Delete a contact from a list.]]>
+        <![CDATA[Test description: Success array contains the expected email addresses.]]>
+        <![CDATA[Error message: Cannot read properties of undefined (reading 'success').]]>
+        <![CDATA[Stacktrace: TypeError: Cannot read properties of undefined (reading 'success')
+   at Object.eval sandbox-script.js:2:83).]]>
+      </failure>
+    </testcase>
+    <testcase name="Response contains both 'success' and 'failure' arrays" time="0.346" classname="Brevo">
+      <failure type="AssertionFailure" message="Cannot read properties of undefined (reading 'success')">
+        <![CDATA[Failed 1 times.]]>
+        <![CDATA[Collection JSON ID: c432a5c9-86c9-4812-b55e-6e55a25a70ea.]]>
+        <![CDATA[Collection name: Brevo.]]>
+        <![CDATA[Request name: Contact management / Lists / Delete a contact from a list.]]>
+        <![CDATA[Test description: Response contains both 'success' and 'failure' arrays.]]>
+        <![CDATA[Error message: Cannot read properties of undefined (reading 'success').]]>
+        <![CDATA[Stacktrace: TypeError: Cannot read properties of undefined (reading 'success')
+   at Object.eval sandbox-script.js:3:83).]]>
+      </failure>
+    </testcase>
+    <testcase name="Ensure that the email addresses in the response are in a valid format" time="0.346" classname="Brevo">
+      <failure type="AssertionFailure" message="Cannot read properties of undefined (reading 'success')">
+        <![CDATA[Failed 1 times.]]>
+        <![CDATA[Collection JSON ID: c432a5c9-86c9-4812-b55e-6e55a25a70ea.]]>
+        <![CDATA[Collection name: Brevo.]]>
+        <![CDATA[Request name: Contact management / Lists / Delete a contact from a list.]]>
+        <![CDATA[Test description: Ensure that the email addresses in the response are in a valid format.]]>
+        <![CDATA[Error message: Cannot read properties of undefined (reading 'success').]]>
+        <![CDATA[Stacktrace: TypeError: Cannot read properties of undefined (reading 'success')
+   at Object.eval sandbox-script.js:4:83).]]>
+      </failure>
+    </testcase>
+  </testsuite>
+  <testsuite name="Contact management / Lists / Get a list's details" id="886ce4c0-83c5-4460-8d8d-fd56d683884e" timestamp="2023-12-01T10:31:53.911Z" tests="6" failures="0" errors="0" time="0.357">
+    <testcase name="Response status code is 200" time="0.357" classname="Brevo"/>
+    <testcase name="Verify the id parsed is what's returned in the response" time="0.357" classname="Brevo"/>
+    <testcase name="Response time is less than 500ms" time="0.357" classname="Brevo"/>
+    <testcase name="Response has a valid content type" time="0.357" classname="Brevo"/>
+    <testcase name="Verify total blacklisted is zero" time="0.357" classname="Brevo"/>
+    <testcase name="Verify createdAt is not empty" time="0.357" classname="Brevo"/>
+  </testsuite>
+  <testsuite name="Contact management / Lists / Update a list" id="c61cd30b-79e8-44e4-bf3d-8238e9be2588" timestamp="2023-12-01T10:31:53.911Z" tests="3" failures="1" errors="0" time="0.620">
+    <testcase name="Status code is 204" time="0.620" classname="Brevo"/>
+    <testcase name="Verify Date is present in the response header" time="0.620" classname="Brevo"/>
+    <testcase name="Response time is less than 500ms" time="0.620" classname="Brevo">
+      <failure type="AssertionFailure" message="expected 620 to be below 500">
+        <![CDATA[Failed 1 times.]]>
+        <![CDATA[Collection JSON ID: c432a5c9-86c9-4812-b55e-6e55a25a70ea.]]>
+        <![CDATA[Collection name: Brevo.]]>
+        <![CDATA[Request name: Contact management / Lists / Update a list.]]>
+        <![CDATA[Test description: Response time is less than 500ms.]]>
+        <![CDATA[Error message: expected 620 to be below 500.]]>
+        <![CDATA[Stacktrace: AssertionError: expected 620 to be below 500
+   at Object.eval sandbox-script.js:3:85).]]>
+      </failure>
+    </testcase>
+  </testsuite>
+  <testsuite name="Contact management / Lists / Delete a list" id="9dcc5e4d-565f-4b25-9c0f-32d5ce8664ab" timestamp="2023-12-01T10:31:53.911Z" tests="3" failures="1" errors="0" time="0.510">
+    <testcase name="Status code is 204" time="0.510" classname="Brevo"/>
+    <testcase name="Verify Date is present in the response header" time="0.510" classname="Brevo"/>
+    <testcase name="Response time is less than 500ms" time="0.510" classname="Brevo">
+      <failure type="AssertionFailure" message="expected 510 to be below 500">
+        <![CDATA[Failed 1 times.]]>
+        <![CDATA[Collection JSON ID: c432a5c9-86c9-4812-b55e-6e55a25a70ea.]]>
+        <![CDATA[Collection name: Brevo.]]>
+        <![CDATA[Request name: Contact management / Lists / Delete a list.]]>
+        <![CDATA[Test description: Response time is less than 500ms.]]>
+        <![CDATA[Error message: expected 510 to be below 500.]]>
+        <![CDATA[Stacktrace: AssertionError: expected 510 to be below 500
+   at Object.eval sandbox-script.js:3:86).]]>
+      </failure>
+    </testcase>
+  </testsuite>
+  <testsuite name="Contact management / Folders / Get all folders" id="25c03bbf-3f40-4709-8ef8-f117c5f7ed20" timestamp="2023-12-01T10:31:53.911Z" tests="6" failures="0" errors="0" time="0.467">
+    <testcase name="Status code is 200" time="0.467" classname="Brevo"/>
+    <testcase name="Response includes folders array" time="0.467" classname="Brevo"/>
+    <testcase name="Each folder has an id, name, totalBlacklisted, totalSubscribers, and uniqueSubscribers" time="0.467" classname="Brevo"/>
+    <testcase name="Response includes count property" time="0.467" classname="Brevo"/>
+    <testcase name="Response time is less than 1000ms" time="0.467" classname="Brevo"/>
+    <testcase name="Id is unique for each response" time="0.467" classname="Brevo"/>
+  </testsuite>
+  <testsuite name="Contact management / Folders / Create a folder" id="28ce3dd6-5244-4608-91a7-dfb2dc25f6e1" timestamp="2023-12-01T10:31:53.911Z" tests="4" failures="0" errors="0" time="0.313">
+    <testcase name="Status code is 201" time="0.313" classname="Brevo"/>
+    <testcase name="Response has the required field 'id'" time="0.313" classname="Brevo"/>
+    <testcase name="Id is a non-negative integer" time="0.313" classname="Brevo"/>
+    <testcase name="Response time is less than 500ms" time="0.313" classname="Brevo"/>
+  </testsuite>
+  <testsuite name="Contact management / Folders / Returns a folder's details" id="0351f879-7b11-4090-9818-afa8ee5b003e" timestamp="2023-12-01T10:31:53.911Z" tests="6" failures="0" errors="0" time="0.328">
+    <testcase name="Response status code is 200" time="0.328" classname="Brevo"/>
+    <testcase name="Id is a non-negative integer" time="0.328" classname="Brevo"/>
+    <testcase name="Name is a non-empty string" time="0.328" classname="Brevo"/>
+    <testcase name="Total blacklisted subscribers is a non-negative integer" time="0.328" classname="Brevo"/>
+    <testcase name="Total subscribers is a non-negative integer" time="0.328" classname="Brevo"/>
+    <testcase name="totalSubscribers is a total of totalBlacklisted and uniqueSubscribers" time="0.328" classname="Brevo"/>
+  </testsuite>
+  <testsuite name="Contact management / Folders / Update a folder" id="6de0172c-a398-4518-9964-a4f5d58c70b3" timestamp="2023-12-01T10:31:53.911Z" tests="3" failures="0" errors="0" time="0.248">
+    <testcase name="Status code is 204" time="0.248" classname="Brevo"/>
+    <testcase name="Verify Date is present in the response header" time="0.248" classname="Brevo"/>
+    <testcase name="Response time is less than 500ms" time="0.248" classname="Brevo"/>
+  </testsuite>
+  <testsuite name="Contact management / Folders / Delete a folder (and all its lists)" id="36f86ca1-c320-439e-aaa0-c14574aef4f0" timestamp="2023-12-01T10:31:53.911Z" tests="3" failures="0" errors="0" time="0.380">
+    <testcase name="Status code is 204" time="0.380" classname="Brevo"/>
+    <testcase name="Verify Date is present in the response header" time="0.380" classname="Brevo"/>
+    <testcase name="Response time is less than 500ms" time="0.380" classname="Brevo"/>
+  </testsuite>
+  <testsuite name="Contact management / Folders / Get all folders after deletion" id="d8f4e5e4-294e-4c03-989e-03ec7da65d56" timestamp="2023-12-01T10:31:53.911Z" tests="6" failures="0" errors="0" time="0.478">
+    <testcase name="Status code is 200" time="0.478" classname="Brevo"/>
+    <testcase name="Response includes folders array" time="0.478" classname="Brevo"/>
+    <testcase name="Each folder has an id, name, totalBlacklisted, totalSubscribers, and uniqueSubscribers" time="0.478" classname="Brevo"/>
+    <testcase name="Response includes count property" time="0.478" classname="Brevo"/>
+    <testcase name="Response time is less than 1000ms" time="0.478" classname="Brevo"/>
+    <testcase name="Id is unique for each response" time="0.478" classname="Brevo"/>
+  </testsuite>
+  <testsuite name="Contact management / Folders / Get lists in a folder" id="11e403ad-194a-4fc7-abad-ae6558670a62" timestamp="2023-12-01T10:31:53.911Z" tests="0" failures="0" errors="0" time="0.315"/>
+  <testsuite name="Contact management / Attributes / List all attributes" id="09bd4d2b-a41b-454d-a7cf-f1d509cd3d71" timestamp="2023-12-01T10:31:53.911Z" tests="0" failures="0" errors="0" time="0.328"/>
+  <testsuite name="Contact management / Attributes / Update contact attribute" id="afc3335e-5b8f-4a99-b388-6a23f280e5ba" timestamp="2023-12-01T10:31:53.911Z" tests="0" failures="0" errors="0" time="0.286"/>
+  <testsuite name="Contact management / Attributes / Create contact attribute" id="9eb05f67-880f-4844-bff1-3a51cbef95ad" timestamp="2023-12-01T10:31:53.911Z" tests="0" failures="0" errors="0" time="0.223"/>
+  <testsuite name="Contact management / Attributes / Delete an attribute" id="00336dfe-be73-44c8-9abb-9e3953c8f26c" timestamp="2023-12-01T10:31:53.911Z" tests="0" failures="0" errors="0" time="0.262"/>
+  <testsuite name="Accounts and settings / Webhooks / Get all webhooks" id="603b37d2-b958-48dc-a6ce-4be2e8a2066d" timestamp="2023-12-01T10:31:53.911Z" tests="0" failures="0" errors="0" time="0.332"/>
+  <testsuite name="Accounts and settings / Webhooks / Create a webhook" id="f5e3d093-c756-4f78-8841-84e5562292af" timestamp="2023-12-01T10:31:53.911Z" tests="0" failures="0" errors="0" time="0.226"/>
+  <testsuite name="Accounts and settings / Webhooks / Get a webhook details" id="4c98fd07-a9aa-4735-8f6e-b6f60568d8c5" timestamp="2023-12-01T10:31:53.911Z" tests="0" failures="0" errors="0" time="0.236"/>
+  <testsuite name="Accounts and settings / Webhooks / Update a webhook" id="3ebde04a-5be1-4c9f-b789-498974f37ebb" timestamp="2023-12-01T10:31:53.911Z" tests="0" failures="0" errors="0" time="0.593"/>
+  <testsuite name="Accounts and settings / Webhooks / Delete a webhook" id="e025f0ab-a1d3-491d-a3ec-7491eb1a8680" timestamp="2023-12-01T10:31:53.911Z" tests="0" failures="0" errors="0" time="0.262"/>
+  <testsuite name="Accounts and settings / Reseller / Credits / Add Email and/or SMS credits to a specific child account" id="1d782985-66c3-4477-ac7e-9e209353b58b" timestamp="2023-12-01T10:31:53.911Z" tests="0" failures="0" errors="0" time="0.247"/>
+  <testsuite name="Accounts and settings / Reseller / Credits / Remove Email and/or SMS credits from a specific child account" id="501ab88e-ece9-4288-b27e-14712fab460b" timestamp="2023-12-01T10:31:53.911Z" tests="0" failures="0" errors="0" time="5.309"/>
+  <testsuite name="Accounts and settings / Reseller / IP management / Associate a dedicated IP to the child" id="7a193b5b-3689-4c3b-a1f7-5d8ce4cf2f37" timestamp="2023-12-01T10:31:53.911Z" tests="0" failures="0" errors="0" time="0.529"/>
+  <testsuite name="Accounts and settings / Reseller / IP management / Dissociate a dedicated IP to the child" id="cbc636d5-e624-4bb6-848b-136c06480d5a" timestamp="2023-12-01T10:31:53.911Z" tests="0" failures="0" errors="0" time="0.431"/>
+  <testsuite name="Accounts and settings / Reseller / Domains / Get all sender domains for a specific child account" id="e23f25c9-b562-45d8-bf8d-74f8f7bd523c" timestamp="2023-12-01T10:31:53.911Z" tests="0" failures="0" errors="0" time="0.322"/>
+  <testsuite name="Accounts and settings / Reseller / Domains / Create a domain for a child account" id="0c9456bd-09b5-48fd-9b06-c0ef92930a3d" timestamp="2023-12-01T10:31:53.911Z" tests="0" failures="0" errors="0" time="0.245"/>
+  <testsuite name="Accounts and settings / Reseller / Domains / Update the sender domain of reseller's child based on the childIdentifier and domainName passed" id="8ab0b59f-3ba9-4b98-97e0-b2167b498db6" timestamp="2023-12-01T10:31:53.911Z" tests="0" failures="0" errors="0" time="0.212"/>
+  <testsuite name="Accounts and settings / Reseller / Domains / Delete the sender domain of the reseller child based on the childIdentifier and domainName passed" id="19fe224c-c71b-4786-89e8-400c69d7dca6" timestamp="2023-12-01T10:31:53.911Z" tests="0" failures="0" errors="0" time="0.286"/>
+  <testsuite name="Accounts and settings / Reseller / Child accounts / Get a child account's details" id="a6831d0f-911a-4b76-a6fd-14653095056d" timestamp="2023-12-01T10:31:53.911Z" tests="0" failures="0" errors="0" time="0.264"/>
+  <testsuite name="Accounts and settings / Reseller / Child accounts / Update info of reseller's child based on the child identifier supplied" id="a2b3eefc-6473-46a9-abee-a524180eef46" timestamp="2023-12-01T10:31:53.911Z" tests="0" failures="0" errors="0" time="0.287"/>
+  <testsuite name="Accounts and settings / Reseller / Child accounts / Delete a single reseller child based on the child identifier supplied" id="7e85707e-0c5d-406b-b577-e8b3b93a4ae9" timestamp="2023-12-01T10:31:53.911Z" tests="0" failures="0" errors="0" time="0.282"/>
+  <testsuite name="Accounts and settings / Reseller / Child accounts / Update info of reseller's child account status based on the identifier supplied" id="a2c98e4c-2116-459e-b1a9-76e6fcc16af0" timestamp="2023-12-01T10:31:53.911Z" tests="0" failures="0" errors="0" time="0.247"/>
+  <testsuite name="Accounts and settings / Reseller / Child accounts / Get the status of a reseller's child account creation, whether it is successfully created (exists) or not based on the childIdentifier supplied" id="62289795-aa50-46e3-a3c8-1201d650f2fa" timestamp="2023-12-01T10:31:53.911Z" tests="0" failures="0" errors="0" time="0.273"/>
+  <testsuite name="Accounts and settings / Reseller / Child accounts / Get session token to access Sendinblue (SSO)" id="30e45b0a-8902-4562-aa97-cac3b7094fc4" timestamp="2023-12-01T10:31:53.911Z" tests="0" failures="0" errors="0" time="0.378"/>
+  <testsuite name="Accounts and settings / Reseller / Child accounts / Get the list of all children accounts" id="3e5a72bf-0d4b-4fd4-9406-84b2e8d9e059" timestamp="2023-12-01T10:31:53.911Z" tests="0" failures="0" errors="0" time="0.460"/>
+  <testsuite name="Accounts and settings / Reseller / Child accounts / Creates a reseller child" id="52097be7-069b-42a7-aeb0-0f974b4fc8ad" timestamp="2023-12-01T10:31:53.911Z" tests="0" failures="0" errors="0" time="0.302"/>
+  <testsuite name="Accounts and settings / Process / Return all the processes for your account" id="d8f3faa8-8a0f-490c-b86a-01e9302eae28" timestamp="2023-12-01T10:31:53.911Z" tests="0" failures="0" errors="0" time="0.229"/>
+  <testsuite name="Accounts and settings / Process / Return the informations for a process" id="8d4edea1-f132-44a4-9735-f5511fa8a896" timestamp="2023-12-01T10:31:53.911Z" tests="0" failures="0" errors="0" time="0.348"/>
+  <testsuite name="Accounts and settings / Corporate / Get the details of requested master account" id="6367ce3c-dc76-40e5-b728-a22dbf97ea66" timestamp="2023-12-01T10:31:53.911Z" tests="0" failures="0" errors="0" time="0.285"/>
+  <testsuite name="Accounts and settings / Corporate / Get the list of all the sub-accounts of the master account." id="e76088df-f188-4465-bacb-a11b6d5074bd" timestamp="2023-12-01T10:31:53.911Z" tests="0" failures="0" errors="0" time="0.201"/>
+  <testsuite name="Accounts and settings / Corporate / Create a new sub-account under a master account." id="26a4d1fb-1fc9-4e37-b4ef-1b56ebc55c1a" timestamp="2023-12-01T10:31:53.911Z" tests="0" failures="0" errors="0" time="0.192"/>
+  <testsuite name="Accounts and settings / Corporate / Generate SSO token to access Sendinblue" id="e591aafd-fdb8-4089-a802-8f6e6641fd8f" timestamp="2023-12-01T10:31:53.911Z" tests="0" failures="0" errors="0" time="0.291"/>
+  <testsuite name="Accounts and settings / Corporate / Get sub-account details" id="416d323c-818a-484f-8c39-068ebd7f69f8" timestamp="2023-12-01T10:31:53.911Z" tests="0" failures="0" errors="0" time="0.336"/>
+  <testsuite name="Accounts and settings / Corporate / Delete a sub-account" id="3effa04b-b731-4081-966c-7dfa66887c5e" timestamp="2023-12-01T10:31:53.911Z" tests="0" failures="0" errors="0" time="0.273"/>
+  <testsuite name="Accounts and settings / Corporate / Update sub-account plan" id="9a6638ed-8103-4eda-8d6b-12cd0b659ab4" timestamp="2023-12-01T10:31:53.911Z" tests="0" failures="0" errors="0" time="0.270"/>
+  <testsuite name="Accounts and settings / Account data / Get your account information, plan and credits details" id="78e910f4-9774-4ef0-9093-a9e436f175df" timestamp="2023-12-01T10:31:53.911Z" tests="0" failures="0" errors="0" time="0.356"/>
+  <testsuite name="Accounts and settings / Senders / Get the list of all your senders" id="9922d458-e281-4ca6-a1f0-e64f0fb3e821" timestamp="2023-12-01T10:31:53.911Z" tests="0" failures="0" errors="0" time="0.325"/>
+  <testsuite name="Accounts and settings / Senders / Create a new sender" id="627fa3a2-b19d-4157-a8c2-0ce872ab5ae9" timestamp="2023-12-01T10:31:53.911Z" tests="0" failures="0" errors="0" time="0.849"/>
+  <testsuite name="Accounts and settings / Senders / Get all the dedicated IPs for your account" id="d3a779d8-c50f-439a-b2d0-6e5c770780aa" timestamp="2023-12-01T10:31:53.911Z" tests="0" failures="0" errors="0" time="0.362"/>
+  <testsuite name="Accounts and settings / Senders / Update a sender" id="a20cb604-3c99-473b-82c6-7e16c19fc19a" timestamp="2023-12-01T10:31:53.911Z" tests="0" failures="0" errors="0" time="0.340"/>
+  <testsuite name="Accounts and settings / Senders / Delete a sender" id="ec1e60cd-17ac-4b88-8266-1489df476ff3" timestamp="2023-12-01T10:31:53.911Z" tests="0" failures="0" errors="0" time="0.277"/>
+  <testsuite name="Accounts and settings / Senders / Get all the dedicated IPs for a sender" id="8b6060de-4c5f-45eb-8d0d-7eb60489ce7b" timestamp="2023-12-01T10:31:53.911Z" tests="0" failures="0" errors="0" time="0.306"/>
+  <testsuite name="Accounts and settings / Domains / Get the list of all your domains" id="ecb0cd8a-3198-489c-a8dd-ea6c494757e7" timestamp="2023-12-01T10:31:53.911Z" tests="0" failures="0" errors="0" time="0.342"/>
+  <testsuite name="Accounts and settings / Domains / Create a new domain" id="27164c75-2449-4edd-8ee5-e707b1842f83" timestamp="2023-12-01T10:31:53.911Z" tests="0" failures="0" errors="0" time="0.523"/>
+  <testsuite name="Accounts and settings / Domains / Delete a domain" id="0e48adfc-332a-4e45-9f44-780cdee27123" timestamp="2023-12-01T10:31:53.911Z" tests="0" failures="0" errors="0" time="0.338"/>
+  <testsuite name="Accounts and settings / Domains / Validate domain configuration" id="7d846d25-d4a2-4500-bc7a-d5c81c5db30d" timestamp="2023-12-01T10:31:53.911Z" tests="0" failures="0" errors="0" time="0.681"/>
+  <testsuite name="Accounts and settings / Domains / Authenticate a domain" id="4a5d6430-ab62-44ee-9463-1d6df8b6438f" timestamp="2023-12-01T10:31:53.911Z" tests="0" failures="0" errors="0" time="0.358"/>
+  <testsuite name="Accounts and settings / User / Get the list of all your users" id="31bbbc6a-9116-484f-bfa4-642a8fbfef6b" timestamp="2023-12-01T10:31:53.911Z" tests="0" failures="0" errors="0" time="0.391"/>
+  <testsuite name="Accounts and settings / User / Check user permission" id="da8d1743-78fd-494e-af16-def0d08d2f5a" timestamp="2023-12-01T10:31:53.911Z" tests="0" failures="0" errors="0" time="0.296"/>
+  <testsuite name="Accounts and settings / User / Revoke user permission" id="9135c78c-c533-4eef-a6bf-956468a97cba" timestamp="2023-12-01T10:31:53.911Z" tests="0" failures="0" errors="0" time="0.286"/>
+  <testsuite name="Accounts and settings / User / Resend / Cancel invitation" id="a232920a-6e55-4cf8-a4cb-158b6517e177" timestamp="2023-12-01T10:31:53.911Z" tests="0" failures="0" errors="0" time="0.267"/>
+  <testsuite name="Accounts and settings / User / Send invitation to user" id="da69453e-4b3f-44e5-9623-d57a796bc356" timestamp="2023-12-01T10:31:53.911Z" tests="0" failures="0" errors="0" time="0.355"/>
+  <testsuite name="Accounts and settings / User / Update permission for a user" id="a06108e7-f159-440e-a140-7337b95d1b20" timestamp="2023-12-01T10:31:53.911Z" tests="0" failures="0" errors="0" time="0.345"/>
+  <testsuite name="Sales CRM / Companies / Get all Companies" id="dd03e197-eb8c-4f64-89f6-efb998a1320c" timestamp="2023-12-01T10:31:53.911Z" tests="3" failures="1" errors="0" time="0.385">
+    <testcase name="Response status code is 200" time="0.385" classname="Brevo"/>
+    <testcase name="Items array in the response should exist and be an array" time="0.385" classname="Brevo"/>
+    <testcase name="Schema is valid" time="0.385" classname="Brevo">
+      <failure type="AssertionFailure" message="expected false to be true">
+        <![CDATA[Failed 1 times.]]>
+        <![CDATA[Collection JSON ID: c432a5c9-86c9-4812-b55e-6e55a25a70ea.]]>
+        <![CDATA[Collection name: Brevo.]]>
+        <![CDATA[Request name: Sales CRM / Companies / Get all Companies.]]>
+        <![CDATA[Test description: Schema is valid.]]>
+        <![CDATA[Error message: expected false to be true.]]>
+        <![CDATA[Stacktrace: AssertionError: expected false to be true
+   at Object.eval sandbox-script.js:3:146).]]>
+      </failure>
+    </testcase>
+  </testsuite>
+  <testsuite name="Sales CRM / Companies / Create a company" id="a88fee90-ce7d-45e7-bc3f-3ad68fd78e25" timestamp="2023-12-01T10:31:53.911Z" tests="6" failures="0" errors="0" time="0.527">
+    <testcase name="verify response code is 200" time="0.527" classname="Brevo"/>
+    <testcase name="Response has the required fields - id" time="0.527" classname="Brevo"/>
+    <testcase name="Id is in a valid format" time="0.527" classname="Brevo"/>
+    <testcase name="Id is not an empty string" time="0.527" classname="Brevo"/>
+    <testcase name="Verify that the 'id' is stored in the collection variable 'companyid'" time="0.527" classname="Brevo"/>
+    <testcase name="Response time is less than 800ms" time="0.527" classname="Brevo"/>
+  </testsuite>
+  <testsuite name="Sales CRM / Companies / Get company attributes" id="0535f3a9-1419-4c65-88c3-f90d442ae5a1" timestamp="2023-12-01T10:31:53.911Z" tests="4" failures="1" errors="0" time="0.468">
+    <testcase name="Response status code is 200" time="0.468" classname="Brevo"/>
+    <testcase name="Response is an array with at least one element" time="0.468" classname="Brevo"/>
+    <testcase name="Verify attributeOptions array contains the expected number of elements" time="0.468" classname="Brevo">
+      <failure type="AssertionFailure" message="expected [] to have a length of 2 but got +0">
+        <![CDATA[Failed 1 times.]]>
+        <![CDATA[Collection JSON ID: c432a5c9-86c9-4812-b55e-6e55a25a70ea.]]>
+        <![CDATA[Collection name: Brevo.]]>
+        <![CDATA[Request name: Sales CRM / Companies / Get company attributes.]]>
+        <![CDATA[Test description: Verify attributeOptions array contains the expected number of elements.]]>
+        <![CDATA[Error message: expected [] to have a length of 2 but got +0.]]>
+        <![CDATA[Stacktrace: AssertionError: expected [] to have a length of 2 but got +0
+   at Object.eval sandbox-script.js:3:148).]]>
+      </failure>
+    </testcase>
+    <testcase name="Ensure that attributeOptions array contains objects with keys 'key' and 'value'" time="0.468" classname="Brevo"/>
+  </testsuite>
+  <testsuite name="Sales CRM / Companies / Link and Unlink company with contact and deal" id="d460c36c-000b-47bd-bcc6-f4821154177a" timestamp="2023-12-01T10:31:53.911Z" tests="1" failures="1" errors="0" time="0.500">
+    <testcase name="Status code is 204" time="0.500" classname="Brevo">
+      <failure type="AssertionFailure" message="expected response to have status code 204 but got 400">
+        <![CDATA[Failed 1 times.]]>
+        <![CDATA[Collection JSON ID: c432a5c9-86c9-4812-b55e-6e55a25a70ea.]]>
+        <![CDATA[Collection name: Brevo.]]>
+        <![CDATA[Request name: Sales CRM / Companies / Link and Unlink company with contact and deal.]]>
+        <![CDATA[Test description: Status code is 204.]]>
+        <![CDATA[Error message: expected response to have status code 204 but got 400.]]>
+        <![CDATA[Stacktrace: AssertionError: expected response to have status code 204 but got 400
+   at Object.eval sandbox-script.js:1:149).]]>
+      </failure>
+    </testcase>
+  </testsuite>
+  <testsuite name="Sales CRM / Companies / Get a company" id="788bf50e-2021-43f9-ac32-955b77dfaa3c" timestamp="2023-12-01T10:31:53.911Z" tests="0" failures="0" errors="0" time="0.257"/>
+  <testsuite name="Sales CRM / Companies / Delete a company" id="7235444a-b924-4b57-87a7-0cb77281b7c3" timestamp="2023-12-01T10:31:53.911Z" tests="0" failures="0" errors="0" time="0.497"/>
+  <testsuite name="Sales CRM / Companies / Create a company after deletion" id="04b08bff-4ba3-4937-8b05-72d981cadffa" timestamp="2023-12-01T10:31:53.911Z" tests="1" failures="0" errors="0" time="0.599">
+    <testcase name="verify response code is 200" time="0.599" classname="Brevo"/>
+  </testsuite>
+  <testsuite name="Sales CRM / Companies / Update a company" id="5565401a-4ce2-489f-add6-a4b575f9617d" timestamp="2023-12-01T10:31:53.911Z" tests="0" failures="0" errors="0" time="0.265"/>
+  <testsuite name="Sales CRM / Companies / Get pipeline stages" id="cfc24180-6b1f-42d1-b627-f572f2f7e372" timestamp="2023-12-01T10:31:53.911Z" tests="0" failures="0" errors="0" time="0.324"/>
+  <testsuite name="Sales CRM / Deals / Get all deals" id="caa406c9-31b2-4f25-a7dd-268885074a8b" timestamp="2023-12-01T10:31:53.911Z" tests="0" failures="0" errors="0" time="0.338"/>
+  <testsuite name="Sales CRM / Deals / Create a deal" id="333fcc3d-f815-482a-b688-6c30b3d415b4" timestamp="2023-12-01T10:31:53.911Z" tests="1" failures="0" errors="0" time="0.480">
+    <testcase name="verify response code is 200" time="0.480" classname="Brevo"/>
+  </testsuite>
+  <testsuite name="Sales CRM / Deals / Link and Unlink a deal with contacts and companies" id="7892a02d-2e86-4d3f-8d1d-5e8fe3d9ae24" timestamp="2023-12-01T10:31:53.911Z" tests="0" failures="0" errors="0" time="0.331"/>
+  <testsuite name="Sales CRM / Deals / Get deal attributes" id="0269dd8e-5d5c-404c-92df-e778361cc325" timestamp="2023-12-01T10:31:53.911Z" tests="0" failures="0" errors="0" time="1.022"/>
+  <testsuite name="Sales CRM / Deals / Get a deal" id="158e472e-5eea-4b64-a9ed-48197c886ac0" timestamp="2023-12-01T10:31:53.911Z" tests="0" failures="0" errors="0" time="0.340"/>
+  <testsuite name="Sales CRM / Deals / Delete a deal" id="3cea7e93-7d10-4af8-b8ba-e52c7951f6b1" timestamp="2023-12-01T10:31:53.911Z" tests="0" failures="0" errors="0" time="0.438"/>
+  <testsuite name="Sales CRM / Deals / Update a deal" id="4690565d-f77c-4278-9c4f-b14885d076a1" timestamp="2023-12-01T10:31:53.911Z" tests="0" failures="0" errors="0" time="0.284"/>
+  <testsuite name="Sales CRM / Tasks / Get all tasks" id="b832e18c-f012-4637-b3be-bd58c02c16ef" timestamp="2023-12-01T10:31:53.911Z" tests="0" failures="0" errors="0" time="1.078"/>
+  <testsuite name="Sales CRM / Tasks / Create a task" id="a67096e8-ca0d-4bab-baff-21bc96d98022" timestamp="2023-12-01T10:31:53.911Z" tests="0" failures="0" errors="0" time="1.139"/>
+  <testsuite name="Sales CRM / Tasks / Get all task types" id="ed305d37-10bb-4c41-8d34-513cf7316315" timestamp="2023-12-01T10:31:53.911Z" tests="0" failures="0" errors="0" time="0.857"/>
+  <testsuite name="Sales CRM / Tasks / Get a task" id="4f12a95d-5256-4227-8baf-1becb8124d69" timestamp="2023-12-01T10:31:53.911Z" tests="0" failures="0" errors="0" time="0.700"/>
+  <testsuite name="Sales CRM / Tasks / Delete a task" id="c2bf56f1-4799-4d22-a59c-dddf88c1705e" timestamp="2023-12-01T10:31:53.911Z" tests="0" failures="0" errors="0" time="0.880"/>
+  <testsuite name="Sales CRM / Tasks / Update a task" id="bdeee3f3-07bc-4f68-92c3-b6b5659863c3" timestamp="2023-12-01T10:31:53.911Z" tests="0" failures="0" errors="0" time="0.924"/>
+  <testsuite name="Sales CRM / Notes / Get all notes" id="c32b30c8-5008-4767-9e86-4b4e4b28a01a" timestamp="2023-12-01T10:31:53.911Z" tests="0" failures="0" errors="0" time="0.266"/>
+  <testsuite name="Sales CRM / Notes / Create a note" id="9945d3b4-03de-465d-bb62-43618e758c9c" timestamp="2023-12-01T10:31:53.911Z" tests="0" failures="0" errors="0" time="0.354"/>
+  <testsuite name="Sales CRM / Notes / Get a note" id="b2f27c74-4957-4a14-9f8f-0a897b484545" timestamp="2023-12-01T10:31:53.911Z" tests="0" failures="0" errors="0" time="0.256"/>
+  <testsuite name="Sales CRM / Notes / Update a note" id="09f03778-b8c2-4648-a054-cdfeba95d0e1" timestamp="2023-12-01T10:31:53.911Z" tests="0" failures="0" errors="0" time="0.236"/>
+  <testsuite name="Sales CRM / Notes / Delete a note" id="6da0ba11-f8bd-4fc6-bffe-6d6f86dd0d97" timestamp="2023-12-01T10:31:53.911Z" tests="0" failures="0" errors="0" time="0.333"/>
+  <testsuite name="Sales CRM / Files / Get all files" id="fc6a338b-977f-4977-8965-848173caa767" timestamp="2023-12-01T10:31:53.911Z" tests="0" failures="0" errors="0" time="0.282"/>
+  <testsuite name="Sales CRM / Files / Upload a file" id="bcd72e18-9098-429a-a404-0cb261ca18e2" timestamp="2023-12-01T10:31:53.911Z" tests="0" failures="0" errors="0" time="0.287"/>
+  <testsuite name="Sales CRM / Files / Download a file" id="6044c310-725c-456c-a202-3b29f8dc1ae6" timestamp="2023-12-01T10:31:53.911Z" tests="0" failures="0" errors="0" time="0.249"/>
+  <testsuite name="Sales CRM / Files / Delete a file" id="981095a9-6606-454d-be85-ef577ff39f86" timestamp="2023-12-01T10:31:53.911Z" tests="0" failures="0" errors="0" time="0.278"/>
+  <testsuite name="Sales CRM / Files / Get file details" id="54b655b7-24bf-4cc3-849c-54f938d37d27" timestamp="2023-12-01T10:31:53.911Z" tests="0" failures="0" errors="0" time="0.232"/>
+  <testsuite name="Conversations / Messages / Send a message as an agent" id="dc942508-8c4d-4543-a62e-b7909a8274da" timestamp="2023-12-01T10:31:53.911Z" tests="0" failures="0" errors="0" time="0.500"/>
+  <testsuite name="Conversations / Messages / Get a message" id="bbd2b60f-91ab-4c69-bf6e-a80fc3d50f9f" timestamp="2023-12-01T10:31:53.911Z" tests="0" failures="0" errors="0" time="0.425"/>
+  <testsuite name="Conversations / Messages / Update a message sent by an agent" id="8b616a6a-c3e9-45a0-9d56-d6288d2b8791" timestamp="2023-12-01T10:31:53.911Z" tests="0" failures="0" errors="0" time="0.381"/>
+  <testsuite name="Conversations / Messages / Delete a message sent by an agent" id="00a702f4-b093-48bb-8630-3b32d51a647f" timestamp="2023-12-01T10:31:53.911Z" tests="0" failures="0" errors="0" time="0.432"/>
+  <testsuite name="Conversations / Status / Sets agent’s status to online for 2-3 minutes" id="92f0712b-2d04-4719-a9a2-5fbaa15e7255" timestamp="2023-12-01T10:31:53.911Z" tests="0" failures="0" errors="0" time="0.378"/>
+  <testsuite name="Conversations / Pushed messages / Send an automated message to a visitor" id="f32fd277-e7f5-42e7-98d3-84783ed8b8fc" timestamp="2023-12-01T10:31:53.911Z" tests="0" failures="0" errors="0" time="0.510"/>
+  <testsuite name="Conversations / Pushed messages / Get an automated message" id="bc9f3c27-4447-47e1-b8fe-df41929a0e4a" timestamp="2023-12-01T10:31:53.911Z" tests="0" failures="0" errors="0" time="0.356"/>
+  <testsuite name="Conversations / Pushed messages / Update an automated message" id="646d0150-2e75-454c-be2b-e8206bc36d7f" timestamp="2023-12-01T10:31:53.911Z" tests="0" failures="0" errors="0" time="0.260"/>
+  <testsuite name="Conversations / Pushed messages / Delete an automated message" id="584f7521-51c3-4548-8d72-f35169ad30e2" timestamp="2023-12-01T10:31:53.911Z" tests="0" failures="0" errors="0" time="0.294"/>
+  <testsuite name="eCommerce / Orders / Create/update an order" id="32fdb112-074f-429f-ac29-93e51533dd8a" timestamp="2023-12-01T10:31:53.911Z" tests="0" failures="0" errors="0" time="0.197"/>
+  <testsuite name="eCommerce / Orders / Create orders in batch" id="01547166-abd4-4d86-b941-e896954ad39a" timestamp="2023-12-01T10:31:53.911Z" tests="0" failures="0" errors="0" time="0.202"/>
+  <testsuite name="eCommerce / Categories / Get all categories" id="f8e8ef3a-9213-45da-bcb9-21b4fd3be065" timestamp="2023-12-01T10:31:53.911Z" tests="0" failures="0" errors="0" time="0.204"/>
+  <testsuite name="eCommerce / Categories / Create/update a category" id="ab62d4cb-835f-4346-b94e-e6484fb09471" timestamp="2023-12-01T10:31:53.911Z" tests="0" failures="0" errors="0" time="0.278"/>
+  <testsuite name="eCommerce / Categories / Create categories in batch" id="1bb59e0e-bf1b-4dbe-9d0e-bc8764014d7d" timestamp="2023-12-01T10:31:53.911Z" tests="0" failures="0" errors="0" time="0.296"/>
+  <testsuite name="eCommerce / Categories / Get a category details" id="8bbc11ae-73fb-4cdc-bb83-34df8192f40c" timestamp="2023-12-01T10:31:53.911Z" tests="0" failures="0" errors="0" time="0.216"/>
+  <testsuite name="eCommerce / Products / Get all products" id="2f1b09d8-36b1-455a-8570-2ec462112498" timestamp="2023-12-01T10:31:53.911Z" tests="0" failures="0" errors="0" time="0.207"/>
+  <testsuite name="eCommerce / Products / Get a product's details" id="e08a7ba1-f274-46e0-b4b3-665e6c9fc9a8" timestamp="2023-12-01T10:31:53.911Z" tests="0" failures="0" errors="0" time="0.240"/>
+  <testsuite name="eCommerce / Products / Create/update a product" id="b5069f19-9979-43d6-852d-fe7a52acc788" timestamp="2023-12-01T10:31:53.911Z" tests="0" failures="0" errors="0" time="0.225"/>
+  <testsuite name="eCommerce / Products / Create products in batch" id="c61c13f9-2b9a-4a11-84a8-7bfcb08dffd0" timestamp="2023-12-01T10:31:53.911Z" tests="0" failures="0" errors="0" time="0.215"/>
+  <testsuite name="eCommerce / Activate eCommerce platform on your account" id="801b03d9-1741-400a-87e9-971a7614998e" timestamp="2023-12-01T10:31:53.911Z" tests="0" failures="0" errors="0" time="0.304"/>
+  <testsuite name="Coupons / Get all your coupon collections" id="d06ddee9-7502-4a1d-bd5d-18a6c6b14221" timestamp="2023-12-01T10:31:53.911Z" tests="0" failures="0" errors="0" time="0.350"/>
+  <testsuite name="Coupons / Create a coupon collection" id="d88783b4-570a-4d63-946e-a371db783375" timestamp="2023-12-01T10:31:53.911Z" tests="0" failures="0" errors="0" time="0.266"/>
+  <testsuite name="Coupons / Get a coupon collection by id" id="f525cbc3-7fb2-4ff0-86ef-c2c9e0a977a8" timestamp="2023-12-01T10:31:53.911Z" tests="0" failures="0" errors="0" time="0.275"/>
+  <testsuite name="Coupons / Update a coupon collection by id" id="2feae46a-bb07-42a5-a5cd-ff59c14dc980" timestamp="2023-12-01T10:31:53.911Z" tests="0" failures="0" errors="0" time="0.306"/>
+  <testsuite name="Coupons / Create coupons for a coupon collection" id="674aa001-94f9-449a-bb9a-42527937089a" timestamp="2023-12-01T10:31:53.911Z" tests="0" failures="0" errors="0" time="0.249"/>
+  <testsuite name="Events / Automation Tracker / Identify the user" id="d630c1bc-759a-4b5f-a893-6c2a31ffc816" timestamp="2023-12-01T10:31:53.911Z" tests="0" failures="0" errors="0" time="0.401"/>
+  <testsuite name="Events / Automation Tracker / Track event" id="462e1b34-abca-4dca-a4ff-9dffff1445f3" timestamp="2023-12-01T10:31:53.911Z" tests="0" failures="0" errors="0" time="0.442"/>
+  <testsuite name="Events / Automation Tracker / Track link clicks" id="b9d78a5e-1bd1-4d36-a330-865238dfd485" timestamp="2023-12-01T10:31:53.911Z" tests="0" failures="0" errors="0" time="0.230"/>
+  <testsuite name="Events / Automation Tracker / Track page views" id="0956d6c6-5547-4073-b99b-9cdad8cf8b7a" timestamp="2023-12-01T10:31:53.911Z" tests="0" failures="0" errors="0" time="0.266"/>
+</testsuites>

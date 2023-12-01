@@ -1,0 +1,1 @@
+{"users":[{"email":"olamide.oluwole0908@gmail.com","is_owner":true,"status":"active","feature_access":{"marketing":"owner","conversations":"owner","crm":"owner","phone":"none"}}]}

@@ -1,0 +1,1 @@
+{"message":"You are not registered on whatsapp, please activate your WhatsApp account by clicking Login with Facebook on WhatsApp from Sendinblue platform."}

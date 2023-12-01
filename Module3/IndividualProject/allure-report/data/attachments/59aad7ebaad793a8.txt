@@ -1,0 +1,1 @@
+{"email":"olamide.oluwole0908@gmail.com","subject":"Login Email confirmation","date":"2023-12-01T11:17:44.09+01:00","events":[{"name":"sent","time":"2023-12-01T11:17:44.09+01:00"}],"body":"Mail content not available","attachmentCount":0}
