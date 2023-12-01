@@ -1,0 +1,1 @@
+{"error":"parseint campaign_id: strconv.ParseInt: parsing \"template\": invalid syntax"}

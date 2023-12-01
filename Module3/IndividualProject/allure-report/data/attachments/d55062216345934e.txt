@@ -1,0 +1,1 @@
+{"email":"carmelo_heller68@yahoo.com","id":23,"emailBlacklisted":false,"smsBlacklisted":false,"createdAt":"2023-12-01T11:12:48.586+01:00","modifiedAt":"2023-12-01T11:12:48.586+01:00","attributes":{},"listIds":[],"statistics":{}}

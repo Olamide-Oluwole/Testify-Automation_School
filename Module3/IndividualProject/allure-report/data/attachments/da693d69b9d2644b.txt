@@ -1,0 +1,1 @@
+{"error":"get client and template id: parse int template id: strconv.ParseInt: parsing \":templateId\": invalid syntax"}

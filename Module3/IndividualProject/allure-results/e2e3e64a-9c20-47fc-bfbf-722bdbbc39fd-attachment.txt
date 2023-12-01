@@ -1,0 +1,1 @@
+{"domains":["auxiliary.com","back-end.com","bluetooth.com","cross-platform.com","example.com","givers.com","redundant.com","virtual.com"]}

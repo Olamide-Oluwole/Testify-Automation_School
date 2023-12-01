@@ -1,0 +1,61 @@
+{
+	"id": "e474ec46-4134-428e-b63d-654b9defe9f9",
+	"name": "Sendinblue API v3",
+	"values": [
+		{
+			"key": "baseUrl",
+			"value": "https://api.brevo.com/v3",
+			"type": "default",
+			"enabled": true
+		},
+		{
+			"key": "api-key",
+			"value": "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",
+			"type": "secret",
+			"enabled": true
+		},
+		{
+			"key": "ma-key",
+			"value": "",
+			"type": "secret",
+			"enabled": true
+		},
+		{
+			"key": "uuuid",
+			"value": "87abd3c6-e364-4eeb-90ad-1d9cce24859a",
+			"type": "any",
+			"enabled": true
+		},
+		{
+			"key": "uuid",
+			"value": "fd933b65-815f-458e-96f7-1a0082bf04f5",
+			"type": "any",
+			"enabled": true
+		},
+		{
+			"key": "m_id",
+			"value": "<202311220018.77239696344@smtp-relay.mailin.fr>",
+			"type": "any",
+			"enabled": true
+		},
+		{
+			"key": "sm_id",
+			"value": "<202311220021.85399126196@smtp-relay.mailin.fr>",
+			"type": "any",
+			"enabled": true
+		},
+		{
+			"key": "template_id",
+			"value": "4",
+			"enabled": true
+		},
+		{
+			"key": "template_id2",
+			"value": "7",
+			"enabled": true
+		}
+	],
+	"_postman_variable_scope": "environment",
+	"_postman_exported_at": "2023-12-01T10:04:39.451Z",
+	"_postman_exported_using": "Postman/10.20.6"
+}
