@@ -7,7 +7,7 @@ public class Task10 {
 
             while (true) {
                 String text = taskInstance.getUserInput(slackChannel);
-                taskInstance.verifyUsersSlackChannel(text);
+                taskInstance.verifyUsersTraining(text);
                 if (text.equalsIgnoreCase("Testify")) {
                     break;
                 }
@@ -20,7 +20,7 @@ public class Task10 {
         return scanner.nextLine();
     }
 
-    public void verifyUsersSlackChannel(String userInput) {
+    public void verifyUsersTraining(String userInput) {
         if (userInput.equalsIgnoreCase("Testify")) {
             System.out.println("You are welcome to the Testify family");
         } else {
