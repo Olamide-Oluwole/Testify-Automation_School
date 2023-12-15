@@ -13,6 +13,5 @@ public abstract class Task17A {
 
     public void oauthBtn(){
     }
-
 }
 
