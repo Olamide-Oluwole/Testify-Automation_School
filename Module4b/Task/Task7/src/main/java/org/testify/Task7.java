@@ -20,7 +20,7 @@ public class Task7 {
             Thread.sleep(5000);
 
         // Find the search field and input the city name
-        WebElement searchField = driver.findElement(By.cssSelector("input#q_search"));
+        WebElement searchField = driver.findElement(By.cssSelector("#q_search"));
         searchField.sendKeys("Lagos");
             Thread.sleep(5000);
         searchField.sendKeys(Keys.RETURN);
@@ -29,14 +29,17 @@ public class Task7 {
         Thread.sleep(5000);
 
         // Get the weather information
-        List<WebElement> days = driver.findElements(By.xpath("/html//div[@class='wrapper']/div[6]/div[5]//div" +
-                "[@class='city_container']/div[5]/div[@class='city_weekday_n_date']/div[@class='city_fc_date fs0']"));
-        List<WebElement> descriptions = driver.findElements(By.xpath("/html//div[@class='wrapper']/div[6]/div[5]//div[@class='city_container']/div[5]/div[@class='city_fc_desc fs0']"));
-            Thread.sleep(5000);
-        // Print the days and weather descriptions
-        for (int i = 0; i < days.size(); i++) {
-            System.out.println(days.get(i).getText() + ": " + descriptions.get(i).getText());
-        }
+            List<WebElement> getWeatherForDays = driver.findElements(By.xpath("//div[@class='city_forecast_day_object']"));
+            System.out.println(getWeatherForDays);
+
+            for (WebElement element : getWeatherForDays) {
+                String daysReturned = element.findElement(By.xpath(".//div[@class='city_fc_date fs0']")).getText();
+                daysReturned = daysReturned.substring(8 ,11);
+
+                String weatherForEachDay = element.findElement(By.xpath(".//div[@class='city_fc_temp fs0']")).getText();
+
+                System.out.println("The weather for " + daysReturned + " is Haze with a temperature of" + weatherForEachDay );
+            }
 
     } catch (Exception e) {
         System.err.println("An error occurred: " + e.getMessage());
