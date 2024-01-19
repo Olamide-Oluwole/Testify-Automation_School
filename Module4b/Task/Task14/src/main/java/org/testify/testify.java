@@ -15,7 +15,10 @@ public class testify {
         //maximise the page
         driver.manage().window().maximize();
         Thread.sleep(5000);
+        //Click the accept button on the dialogue
        driver.findElement(By.xpath("//button[@id='accept-cookie-policy']")).click();
+
+       //Click the Tutorial button at the top corner of the page
        driver.findElement(By.xpath("//header/nav[1]/div[1]/div[1]/div[4]/a[1]")).click();
 
     }
