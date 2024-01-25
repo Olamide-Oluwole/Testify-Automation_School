@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE  suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Test-Suite">
+    <test name="Postive-Tests">
+        <classes>
+            <class name="org.testify.ElementTile"></class>
+            <class name="org.testify.FormTile"></class>
+            <class name="org.testify.WidgetTile"></class>
+            <class name="org.testify.InteractionsTile"></class>
+
+        </classes>
+    </test>
+</suite>
