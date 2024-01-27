@@ -7,7 +7,7 @@ import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 
 
-public class HomepageValidation {
+public class InventoryPurchase {
     WebDriver driver = null;
     SoftAssert sa = new SoftAssert();
 
