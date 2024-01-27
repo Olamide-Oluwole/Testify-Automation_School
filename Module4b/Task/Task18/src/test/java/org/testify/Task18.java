@@ -8,7 +8,7 @@ import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 
 
-public class ItemPurchase {
+public class Task18 {
     WebDriver driver = null;
     SoftAssert sa = new SoftAssert();
 
