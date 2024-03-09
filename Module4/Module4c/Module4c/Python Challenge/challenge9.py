@@ -7,6 +7,5 @@ def count_vowels(string):
     return count
 
 
-# Example usage:
 input_string = "Good Morning Lamide"
 print(f"The number of vowels in '{input_string}' is: {count_vowels(input_string)}")
