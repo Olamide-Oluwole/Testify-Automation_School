@@ -1,4 +1,5 @@
-# Declare a global variable with name as language and value as "Python"
+\
+/''# Declare a global variable with name as language and value as "Python"
 language = "Python"
 
 # Create a function
